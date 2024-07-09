@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using Svg.Skia;
 using SkiaSharp;
+using System.Xml.Linq;
 
 namespace ED_Login
 {
@@ -43,7 +44,7 @@ namespace ED_Login
             string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
             string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
             // StreamWriter sw = new StreamWriter("C:/Benutzer/ma.theisen/Dokumente/Projekt/Data.csv");
-            StreamWriter sw = new StreamWriter(Application.StartupPath + "Benutzerdaten.csv", true);
+            StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", true);
             string neuezeile = (TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
             + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";");
             sw.WriteLine(neuezeile);
@@ -237,33 +238,41 @@ namespace ED_Login
         }
         private bool StreamreaderBereitsvergeben(string nutzername)
         {
+            try
+            {
 
-           using (StreamReader passreader = new StreamReader(Application.StartupPath + "Benutzerdaten.csv"))
-           {
-              string Zeile;
-
-                LabelBereitsVergeben.Visible = false;
-                LabelBenutzerbereitsvergeben.Visible = false;
-
-                while ((Zeile = passreader.ReadLine()) != null)
+                using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
                 {
-                    string[] Data = Zeile.Split(';');
+                    string Zeile;
 
-                    if (Data.Length < 2)
+                    LabelBereitsVergeben.Visible = false;
+                    LabelBenutzerbereitsvergeben.Visible = false;
+
+                    while ((Zeile = passreader.ReadLine()) != null)
                     {
-                        return false;
-                    }
-                    else if (Data[2] == TextBoxEmail.Text)
-                    {
+                        string[] Data = Zeile.Split(';');
+
+                        if (Data.Length < 3)
+                        {
+                            return false;
+                        }
+                        else if (Data[2] == TextBoxEmail.Text)
+                        {
                             LabelBereitsVergeben.Visible = true;
-                    }
-                    if (Data[1] == TextBoxBenutzername.Text)
-                    {
+                        }
+                        if (Data[1] == TextBoxBenutzername.Text)
+                        {
                             LabelBenutzerbereitsvergeben.Visible = true;
-                    }                    
+                        }
+                    }
+                    return true;
                 }
-                return true;
-           }
+            }
+            catch
+            {
+                Console.WriteLine("Es gab einen Fehler beim Öffnen der Datei: ");
+                return false;
+            }
 
 
         }

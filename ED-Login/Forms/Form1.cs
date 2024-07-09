@@ -79,7 +79,7 @@ namespace ED_Login
         }
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            using (StreamReader passreader = new StreamReader(Application.StartupPath + "\\Data\\" + "Benutzerdaten.csv"))
+            using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
             {
                 string Zeile;
                 string eingegebenespasswort;

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -16,6 +18,22 @@ namespace ED_Login.Forms
         public Passwortvergessen()
         {
             InitializeComponent();
+        }
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // Berechne den Hash - dies gibt Byte-Daten zurück.
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                // Konvertiere die Byte-Daten in eine Zeichenkette (hexadezimal)
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
 
         private void TextBoxBenutzerName_Enter(object sender, EventArgs e)
@@ -36,6 +54,10 @@ namespace ED_Login.Forms
                 TextBoxBenutzerName.ForeColor = Color.Silver;
                 TextBoxBenutzerName.Text = "e.g ma.mustermann";
             }
+        }
+        private void TextBoxBenutzerName_TextChanged(object sender, EventArgs e)
+        {
+            AccountErkannt();
         }
 
         private void TextBoxEmail_Enter(object sender, EventArgs e)
@@ -78,6 +100,7 @@ namespace ED_Login.Forms
             {
                 LabelEmailUngültig.Visible = false;
             }
+            AccountErkannt();
         }
         private bool TestvonEmail()
         {
@@ -86,13 +109,146 @@ namespace ED_Login.Forms
             Match match = regex.Match(email);
             return match.Success;
         }
-
         private void ButtonZurueck_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form1 form1 = new Form1();
             form1.StartPosition = FormStartPosition.CenterScreen;
             form1.Show();
+        }
+        public void AccountErkannt()
+        {
+            using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
+            {
+                string Zeile;
+
+                while ((Zeile = passreader.ReadLine()) != null)
+                {
+                    string[] Data = Zeile.Split(';');
+                    // Data.Length einfügen
+
+                    if (Data.Length < 3)
+                    {
+                        continue;
+                    }
+                    if (Data[2] == TextBoxEmail.Text && Data[1] == TextBoxBenutzerName.Text)
+                    {
+                        LabelErkannt.Visible = true;
+                        int nummer;
+                        if (int.TryParse(Data[5], out nummer))
+                        {
+                            ComboBoxSicherheitsFragen.SelectedIndex = nummer;
+                            if (TextBoxAntwort.Text == Data[6])
+                            {
+                                LabelGeschafft.Visible = true;
+                                LabelNeuesPasswort.Visible = true;
+                                LabelNeuesPasswortBestaetigen.Visible = true;
+                                TextBoxNeuesPasswort.Visible = true;
+                                TextBoxNeuesPasswortBestätigen.Visible = true;
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        LabelErkannt.Visible = false;
+                        ComboBoxSicherheitsFragen.SelectedIndex = -1;
+                    }
+
+                }
+            }
+        }
+        private void ButtonSendenAntwort_Click(object sender, EventArgs e)
+        {
+            AccountErkannt();
+        }
+        public bool Passwortüberprüfen()
+        {
+            string passwort = TextBoxNeuesPasswort.Text;
+            Regex regex = new Regex(@"^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$");
+            Match match = regex.Match(passwort);
+            return match.Success;
+        }
+        private void TextBoxNeuesPasswort_TextChanged(object sender, EventArgs e)
+        {
+            TextBoxNeuesPasswort.UseSystemPasswordChar = true;
+            if (!Passwortüberprüfen())
+            {
+                LabelPWAnforderung.Visible = true;
+            }
+            else
+            {
+                LabelPWAnforderung.Visible = false;
+                if (TextBoxNeuesPasswort.Text != TextBoxNeuesPasswortBestätigen.Text)
+                {
+                    LabelPWÜbereinstimmung.Visible = true;
+                    ButtonÄndern.Visible = false;
+                }
+                else
+                {
+                    LabelPWÜbereinstimmung.Visible = false;
+                    ButtonÄndern.Visible = true;
+                }
+            }
+        }
+        private void TextBoxNeuesPasswortBestätigen_TextChanged(object sender, EventArgs e)
+        {
+            TextBoxNeuesPasswortBestätigen.UseSystemPasswordChar = true;
+            if (TextBoxNeuesPasswort.Text != TextBoxNeuesPasswortBestätigen.Text)
+            {
+                LabelPWÜbereinstimmung.Visible = true;
+                ButtonÄndern.Visible = false;
+            }
+            else
+            {
+                LabelPWÜbereinstimmung.Visible = false;
+                ButtonÄndern.Visible = true;
+            }
+        }
+        private void ButtonÄndern_Click(object sender, EventArgs e)
+        {
+            List<string> alleZeilen = new List<string>();
+            bool AenderungGetaetigt = false;
+
+            using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
+            {
+                string Zeile;
+                while ((Zeile = passreader.ReadLine()) != null)
+                {
+                    string[] Data = Zeile.Split(';');
+
+                    
+                    if (Data.Length < 6) 
+                    {
+                        alleZeilen.Add(Zeile);
+                        continue;
+                    }
+
+                    // Benutzername und E-Mail überprüfen
+                    if (Data[2] == TextBoxEmail.Text && Data[1] == TextBoxBenutzerName.Text)
+                    {
+                        // Änderungen vornehmen falls nötig
+                        Data[3] = HashPassword(TextBoxNeuesPasswort.Text);
+                        Data[4] = HashPassword(TextBoxNeuesPasswortBestätigen.Text);
+                        AenderungGetaetigt = true;
+                        alleZeilen.Add(string.Join(";", Data)); 
+                    }
+                    else
+                    {
+                        alleZeilen.Add(Zeile);
+                    }
+                }
+            }
+            if (AenderungGetaetigt)
+            {
+                using (StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", false)) // false überschreibt die Datei
+                {
+                    foreach (string zeile in alleZeilen)
+                    {
+                        sw.WriteLine(zeile);
+                    }
+                }
+            }
         }
     }
 }
