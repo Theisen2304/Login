@@ -125,25 +125,6 @@ namespace ED_Login
                 }
             }
         }
-        private bool TestvonEmail()
-        {
-            string email = TextboxEmailBenutzerEingabe.Text;
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            Match match = regex.Match(email);
-            return match.Success;
-        }
-        private void TextboxEmailBenutzerEingabe_TextChanged(object sender, EventArgs e)
-        {
-            if (TestvonEmail() == false)
-            {
-                EmailNichtGültig.Visible = true;
-            }
-            else
-            {
-                EmailNichtGültig.Visible = false;
-            }
-            
-        }
         private void ButtonBeenden_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -164,39 +145,5 @@ namespace ED_Login
                 return builder.ToString();
             }
         }
-
-        //private bool StreamreaderBenutzen(string nutzername)
-        //{
-
-        //    using (StreamReader passreader = new StreamReader(Application.StartupPath + "\\Data\\" + "Benutzerdaten.csv"))
-        //    {
-        //        string Zeile;
-
-        //        while ((Zeile = passreader.ReadLine()) != null)
-        //        {
-        //            string[] Data = Zeile.Split(';');
-
-        //        }
-        //    }
-
-
-        //}
-
-        //public string ReaderBenutzer(string input)
-        //{
-        //    using (StreamReader benutzerreader = new StreamReader(input))
-        //    {
-        //    }
-        //}
-
-        //private bool Login(string eingebenesPasswort, string gespeicherterHash)
-        //{
-        //    eingebenesPasswort = TextboxPasswortEingabe.Text;
-        //    // Hash das eingegebene Passwort
-        //    string hashVomEingegebenenPasswort = HashPassword(eingebenesPasswort);
-
-        //    // Vergleiche den neu erstellten Hash mit dem gespeicherten Hash
-        //    return hashVomEingegebenenPasswort == gespeicherterHash;
-        //}
     }
 }

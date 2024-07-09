@@ -330,7 +330,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(790, 712);
+            this.ClientSize = new System.Drawing.Size(787, 712);
             this.Controls.Add(this.LabelBenutzerbereitsvergeben);
             this.Controls.Add(this.LabelBereitsVergeben);
             this.Controls.Add(this.LabelEmailUngültig);

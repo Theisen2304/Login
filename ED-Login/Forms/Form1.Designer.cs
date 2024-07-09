@@ -40,7 +40,6 @@ namespace ED_Login
             this.LabelKeinKonto = new System.Windows.Forms.Label();
             this.RedirectRegistrieren = new System.Windows.Forms.LinkLabel();
             this.RedirectPasswortVergessen = new System.Windows.Forms.LinkLabel();
-            this.EmailNichtGültig = new System.Windows.Forms.Label();
             this.ButtonBeenden = new System.Windows.Forms.Button();
             this.LabelLoginErfolgreich = new System.Windows.Forms.Label();
             this.LabelBenutzerEmailFalsch = new System.Windows.Forms.Label();
@@ -93,7 +92,6 @@ namespace ED_Login
             this.TextboxEmailBenutzerEingabe.Size = new System.Drawing.Size(199, 22);
             this.TextboxEmailBenutzerEingabe.TabIndex = 5;
             this.TextboxEmailBenutzerEingabe.Text = "example@eurodata.de";
-            this.TextboxEmailBenutzerEingabe.TextChanged += new System.EventHandler(this.TextboxEmailBenutzerEingabe_TextChanged);
             this.TextboxEmailBenutzerEingabe.Enter += new System.EventHandler(this.TextboxEmailBenutzerEingabe_Enter);
             this.TextboxEmailBenutzerEingabe.Leave += new System.EventHandler(this.TextboxEmailBenutzerEingabe_Leave);
             // 
@@ -167,17 +165,6 @@ namespace ED_Login
             this.RedirectPasswortVergessen.Text = "Passwort \r\nvergessen?";
             this.RedirectPasswortVergessen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.RedirectPasswortVergessen_MouseClick);
             // 
-            // EmailNichtGültig
-            // 
-            this.EmailNichtGültig.AutoSize = true;
-            this.EmailNichtGültig.ForeColor = System.Drawing.Color.Red;
-            this.EmailNichtGültig.Location = new System.Drawing.Point(498, 149);
-            this.EmailNichtGültig.Name = "EmailNichtGültig";
-            this.EmailNichtGültig.Size = new System.Drawing.Size(93, 16);
-            this.EmailNichtGültig.TabIndex = 12;
-            this.EmailNichtGültig.Text = "Email ungültig!";
-            this.EmailNichtGültig.Visible = false;
-            // 
             // ButtonBeenden
             // 
             this.ButtonBeenden.Location = new System.Drawing.Point(700, 414);
@@ -191,19 +178,20 @@ namespace ED_Login
             // LabelLoginErfolgreich
             // 
             this.LabelLoginErfolgreich.AutoSize = true;
-            this.LabelLoginErfolgreich.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LabelLoginErfolgreich.Location = new System.Drawing.Point(330, 370);
+            this.LabelLoginErfolgreich.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelLoginErfolgreich.ForeColor = System.Drawing.Color.Lime;
+            this.LabelLoginErfolgreich.Location = new System.Drawing.Point(246, 367);
             this.LabelLoginErfolgreich.Name = "LabelLoginErfolgreich";
-            this.LabelLoginErfolgreich.Size = new System.Drawing.Size(107, 16);
+            this.LabelLoginErfolgreich.Size = new System.Drawing.Size(389, 58);
             this.LabelLoginErfolgreich.TabIndex = 14;
-            this.LabelLoginErfolgreich.Text = "Login Erfolgreich";
+            this.LabelLoginErfolgreich.Text = "Login Erfolgreich!";
             this.LabelLoginErfolgreich.Visible = false;
             // 
             // LabelBenutzerEmailFalsch
             // 
             this.LabelBenutzerEmailFalsch.AutoSize = true;
             this.LabelBenutzerEmailFalsch.ForeColor = System.Drawing.Color.Red;
-            this.LabelBenutzerEmailFalsch.Location = new System.Drawing.Point(290, 171);
+            this.LabelBenutzerEmailFalsch.Location = new System.Drawing.Point(498, 149);
             this.LabelBenutzerEmailFalsch.Name = "LabelBenutzerEmailFalsch";
             this.LabelBenutzerEmailFalsch.Size = new System.Drawing.Size(165, 16);
             this.LabelBenutzerEmailFalsch.TabIndex = 15;
@@ -216,7 +204,7 @@ namespace ED_Login
             this.LabelPasswortfalsch.ForeColor = System.Drawing.Color.Red;
             this.LabelPasswortfalsch.Location = new System.Drawing.Point(498, 213);
             this.LabelPasswortfalsch.Name = "LabelPasswortfalsch";
-            this.LabelPasswortfalsch.Size = new System.Drawing.Size(135, 20);
+            this.LabelPasswortfalsch.Size = new System.Drawing.Size(108, 16);
             this.LabelPasswortfalsch.TabIndex = 16;
             this.LabelPasswortfalsch.Text = "Passwort Falsch!";
             this.LabelPasswortfalsch.Visible = false;
@@ -231,7 +219,6 @@ namespace ED_Login
             this.Controls.Add(this.LabelBenutzerEmailFalsch);
             this.Controls.Add(this.LabelLoginErfolgreich);
             this.Controls.Add(this.ButtonBeenden);
-            this.Controls.Add(this.EmailNichtGültig);
             this.Controls.Add(this.RedirectPasswortVergessen);
             this.Controls.Add(this.RedirectRegistrieren);
             this.Controls.Add(this.LabelKeinKonto);
@@ -261,7 +248,6 @@ namespace ED_Login
         private System.Windows.Forms.Label LabelKeinKonto;
         private System.Windows.Forms.LinkLabel RedirectRegistrieren;
         private System.Windows.Forms.LinkLabel RedirectPasswortVergessen;
-        private System.Windows.Forms.Label EmailNichtGültig;
         private System.Windows.Forms.Button ButtonBeenden;
         private System.Windows.Forms.Label LabelLoginErfolgreich;
         private System.Windows.Forms.Label LabelBenutzerEmailFalsch;

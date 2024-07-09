@@ -220,7 +220,14 @@ namespace ED_Login
             }
             else
             {
-                LabelEmailUngültig.Visible = false;
+                if(TextBoxEmail.Text == "example@eurodata.de")
+                {
+                    LabelEmailUngültig.Visible = true;
+                }
+                else
+                {
+                    LabelEmailUngültig.Visible = false;
+                }
             }
             StreamreaderBereitsvergeben(TextBoxEmail.Text);
 
@@ -236,6 +243,7 @@ namespace ED_Login
                 LabelPasswortStimmtnichtüberein.Visible = false;
             }
         }
+
         private bool StreamreaderBereitsvergeben(string nutzername)
         {
             try
@@ -276,6 +284,7 @@ namespace ED_Login
 
 
         }
+
         private void TextBoxBenutzername_TextChanged(object sender, EventArgs e)
         {
             StreamreaderBereitsvergeben(TextBoxBenutzername.Text);
