@@ -39,20 +39,53 @@ namespace ED_Login
                 return builder.ToString();
             }
         }
+        //private void Registrieren_Click(object sender, EventArgs e)
+        //{
+        //    string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
+        //    string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
+        //    // StreamWriter sw = new StreamWriter("C:/Benutzer/ma.theisen/Dokumente/Projekt/Data.csv");
+        //    StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", true);
+        //    string neuezeile = (TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
+        //    + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";");
+        //    sw.WriteLine(neuezeile);
+        //    sw.Close();
+        //    this.Hide();
+        //    Form1 form = new Form1();
+        //    form.Show();
+
+        //}
         private void Registrieren_Click(object sender, EventArgs e)
         {
+            int nextId = GetNextId();
+            bool istAdmin = false; // Beispielsweise
+            bool istAktiv = false;
+
+            if (TextBoxBenutzername.Text == "Administrator")
+            {
+                istAdmin = true;
+            }
+
             string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
             string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
-            // StreamWriter sw = new StreamWriter("C:/Benutzer/ma.theisen/Dokumente/Projekt/Data.csv");
-            StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", true);
-            string neuezeile = (TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
-            + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";");
+
+            StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projek/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", true);
+            string neuezeile = nextId + ";" + TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
+                + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";" + (istAdmin ? "1" : "0") + ";" + (istAktiv ? "1" : "0") + ";";
             sw.WriteLine(neuezeile);
             sw.Close();
             this.Hide();
             Form1 form = new Form1();
             form.Show();
-
+        }
+        private int GetNextId()
+        {
+            string lastLine = File.ReadLines("C:/Users/ma.theisen/Documents/Backup/Projek/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv").LastOrDefault();
+            if (lastLine != null)
+            {
+                string[] data = lastLine.Split(';');
+                return int.Parse(data[0]) + 1;
+            }
+            return 1; // Default starten bei 1, wenn die Datei leer ist
         }
         private void TextBoxEmail_Enter(object sender, EventArgs e)
         {
