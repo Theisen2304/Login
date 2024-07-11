@@ -90,16 +90,15 @@ namespace ED_Login
 
                 if (int.TryParse(data[0].Trim(), out int id))
                 {
-                    return id + 1; // Gibt die nächste ID zurück
+                    return id + 1; 
                 }
                 else
-                {
-                    // Logge oder handle den Fehler nach Bedarf, falls die Umwandlung fehlschlägt
+                {                 
                     Console.WriteLine("Die erste Spalte enthält keine gültige Ganzzahl: " + data[0]);
                 }
             }
 
-            return 1; // Standardwert zurückgeben, wenn die Datei leer ist oder keine gültige Ganzzahl gefunden wurde
+            return 1; 
         }
         private void TextBoxEmail_Enter(object sender, EventArgs e)
         {
