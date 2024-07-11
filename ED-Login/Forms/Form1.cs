@@ -94,12 +94,12 @@ namespace ED_Login
                     {
                         continue;
                     }
-                    if (Data[1] == TextboxEmailBenutzerEingabe.Text && Data[3] == eingegebenespasswort || Data[2] == TextboxEmailBenutzerEingabe.Text && Data[3] == eingegebenespasswort)
+                    if (Data[2] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort || Data[3] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort)
                     {
                         LabelLoginErfolgreich.Visible = true;
 
                     }
-                    if (Data[1] == TextboxEmailBenutzerEingabe.Text || Data[2] == TextboxEmailBenutzerEingabe.Text)
+                    if (Data[2] == TextboxEmailBenutzerEingabe.Text || Data[3] == TextboxEmailBenutzerEingabe.Text)
                     {
                         if(LabelLoginErfolgreich.Visible == true)
                         {
@@ -110,7 +110,7 @@ namespace ED_Login
                             LabelPasswortfalsch.Visible = true;
                         }
                     }
-                    if (Data[3] == eingegebenespasswort)
+                    if (Data[4] == eingegebenespasswort)
                     {
                         if (LabelLoginErfolgreich.Visible == true)
                         {
@@ -120,6 +120,13 @@ namespace ED_Login
                         {
                             LabelBenutzerEmailFalsch.Visible = true;
                         }
+                    }
+
+                    if (LabelLoginErfolgreich.Visible == true)
+                    {
+                        this.Hide();
+                        Angemeldet angemeldet = new Angemeldet();
+                        angemeldet.Show();
                     }
                     
                 }

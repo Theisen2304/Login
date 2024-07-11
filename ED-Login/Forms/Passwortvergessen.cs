@@ -131,11 +131,11 @@ namespace ED_Login.Forms
                     {
                         continue;
                     }
-                    if (Data[2] == TextBoxEmail.Text && Data[1] == TextBoxBenutzerName.Text)
+                    if (Data[3] == TextBoxEmail.Text && Data[2] == TextBoxBenutzerName.Text)
                     {
                         LabelErkannt.Visible = true;
                         int nummer;
-                        if (int.TryParse(Data[5], out nummer))
+                        if (int.TryParse(Data[6], out nummer))
                         {
                             ComboBoxSicherheitsFragen.SelectedIndex = nummer;
                             if (TextBoxAntwort.Text == Data[6])
@@ -225,11 +225,11 @@ namespace ED_Login.Forms
                     }
 
                     // Benutzername und E-Mail überprüfen
-                    if (Data[2] == TextBoxEmail.Text && Data[1] == TextBoxBenutzerName.Text)
+                    if (Data[3] == TextBoxEmail.Text && Data[1] == TextBoxBenutzerName.Text)
                     {
                         // Änderungen vornehmen falls nötig
-                        Data[3] = HashPassword(TextBoxNeuesPasswort.Text);
-                        Data[4] = HashPassword(TextBoxNeuesPasswortBestätigen.Text);
+                        Data[4] = HashPassword(TextBoxNeuesPasswort.Text);
+                        Data[5] = HashPassword(TextBoxNeuesPasswortBestätigen.Text);
                         AenderungGetaetigt = true;
                         alleZeilen.Add(string.Join(";", Data)); 
                     }

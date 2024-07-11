@@ -60,6 +60,7 @@ namespace ED_Login
             int nextId = GetNextId();
             bool istAdmin = false; // Beispielsweise
             bool istAktiv = false;
+            bool zuletztangemeldet = false;
 
             if (TextBoxBenutzername.Text == "Administrator")
             {
@@ -71,7 +72,7 @@ namespace ED_Login
 
             StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv"), true);
             string neuezeile = nextId + ";" + TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
-                + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";" + (istAdmin ? "1" : "0") + ";" + (istAktiv ? "1" : "0") + ";";
+                + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";" + (istAdmin ? "1" : "0") + ";" + (istAktiv ? "1" : "0") + ";" + (zuletztangemeldet ? "1" : "0") + ";";
             sw.WriteLine(neuezeile);
             sw.Close();
             this.Hide();
@@ -80,13 +81,25 @@ namespace ED_Login
         }
         private int GetNextId()
         {
-            string lastLine = System.IO.File.ReadLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")).LastOrDefault();
-            if (lastLine != null)
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv");
+            string lastLine = System.IO.File.ReadLines(filePath).LastOrDefault();
+
+            if (!string.IsNullOrEmpty(lastLine))
             {
                 string[] data = lastLine.Split(';');
-                return int.Parse(data[0]) + 1;
+
+                if (int.TryParse(data[0].Trim(), out int id))
+                {
+                    return id + 1; // Gibt die nächste ID zurück
+                }
+                else
+                {
+                    // Logge oder handle den Fehler nach Bedarf, falls die Umwandlung fehlschlägt
+                    Console.WriteLine("Die erste Spalte enthält keine gültige Ganzzahl: " + data[0]);
+                }
             }
-            return 1; // Default starten bei 1, wenn die Datei leer ist
+
+            return 1; // Standardwert zurückgeben, wenn die Datei leer ist oder keine gültige Ganzzahl gefunden wurde
         }
         private void TextBoxEmail_Enter(object sender, EventArgs e)
         {
