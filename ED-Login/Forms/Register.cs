@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using Svg.Skia;
 using SkiaSharp;
 using System.Xml.Linq;
+using static System.Net.WebRequestMethods;
 
 namespace ED_Login
 {
@@ -68,7 +69,7 @@ namespace ED_Login
             string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
             string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
 
-            StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projek/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", true);
+            StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv"), true);
             string neuezeile = nextId + ";" + TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
                 + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";" + (istAdmin ? "1" : "0") + ";" + (istAktiv ? "1" : "0") + ";";
             sw.WriteLine(neuezeile);
@@ -79,7 +80,7 @@ namespace ED_Login
         }
         private int GetNextId()
         {
-            string lastLine = File.ReadLines("C:/Users/ma.theisen/Documents/Backup/Projek/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv").LastOrDefault();
+            string lastLine = System.IO.File.ReadLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")).LastOrDefault();
             if (lastLine != null)
             {
                 string[] data = lastLine.Split(';');
@@ -282,7 +283,7 @@ namespace ED_Login
             try
             {
 
-                using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
+                using (StreamReader passreader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")))
                 {
                     string Zeile;
 
