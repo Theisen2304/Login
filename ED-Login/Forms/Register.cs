@@ -40,21 +40,6 @@ namespace ED_Login
                 return builder.ToString();
             }
         }
-        //private void Registrieren_Click(object sender, EventArgs e)
-        //{
-        //    string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
-        //    string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
-        //    // StreamWriter sw = new StreamWriter("C:/Benutzer/ma.theisen/Dokumente/Projekt/Data.csv");
-        //    StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", true);
-        //    string neuezeile = (TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
-        //    + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";");
-        //    sw.WriteLine(neuezeile);
-        //    sw.Close();
-        //    this.Hide();
-        //    Form1 form = new Form1();
-        //    form.Show();
-
-        //}
         private void Registrieren_Click(object sender, EventArgs e)
         {
             int nextId = GetNextId();

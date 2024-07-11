@@ -132,6 +132,7 @@
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Benutzer.config" />
     <None Include="CSVDATA\Benutzerdaten.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

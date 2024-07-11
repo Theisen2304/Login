@@ -17,10 +17,12 @@ namespace ED_Login
 {
     public partial class Form1 : Form
     {
+        private const FormStartPosition centerScreen = FormStartPosition.CenterScreen;
+
         public Form1()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = centerScreen;
 
         }
         private void TextboxEmailBenutzerEingabe_Enter(object sender, EventArgs e)
@@ -67,14 +69,14 @@ namespace ED_Login
         {
             this.Hide();
             Passwortvergessen passwortvergessen = new Passwortvergessen();
-            passwortvergessen.StartPosition = FormStartPosition.CenterScreen;
+            passwortvergessen.StartPosition = centerScreen;
             passwortvergessen.Show();
         }
         private void RedirectRegistrieren_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
              this.Hide();
              Register register = new Register();
-             register.StartPosition = FormStartPosition.CenterScreen;
+             register.StartPosition = centerScreen;
              register.Show();
         }
         private void ButtonLogin_Click(object sender, EventArgs e)
@@ -127,11 +129,20 @@ namespace ED_Login
                         this.Hide();
                         Angemeldet angemeldet = new Angemeldet();
                         angemeldet.Show();
+                        angemeldet.StartPosition = centerScreen;
                     }
                     
                 }
             }
         }
+        //public void Login(string username, string password)
+        //{
+        //    if (IsLoginSuccessful(username, password))
+        //    {
+        //        SaveLastLoggedInUser(username);
+        //        // Weiterer Code für erfolgreichen Login
+        //    }
+        //}
         private void ButtonBeenden_Click(object sender, EventArgs e)
         {
             Application.Exit();
