@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
-// using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
 using ED_Login.Forms;
 
@@ -23,7 +26,7 @@ namespace ED_Login
         {
             InitializeComponent();
             StartPosition = centerScreen;
-
+            this.BackColor = ColorTranslator.FromHtml("#F2F6F7");
         }
         private void TextboxEmailBenutzerEingabe_Enter(object sender, EventArgs e)
         {
@@ -31,7 +34,7 @@ namespace ED_Login
             {
 
                 TextboxEmailBenutzerEingabe.Font = new Font(TextboxPasswortEingabe.Font, FontStyle.Regular);
-                TextboxEmailBenutzerEingabe.ForeColor = Color.Black;
+                TextboxEmailBenutzerEingabe.ForeColor = ColorTranslator.FromHtml("#3D494D");
                 TextboxEmailBenutzerEingabe.Text = "";
             }
         }
@@ -40,7 +43,7 @@ namespace ED_Login
             if (string.IsNullOrWhiteSpace(TextboxEmailBenutzerEingabe.Text))
             {
                 TextboxEmailBenutzerEingabe.Font = new Font(TextboxPasswortEingabe.Font, FontStyle.Italic);
-                TextboxEmailBenutzerEingabe.ForeColor = Color.Silver;
+                TextboxEmailBenutzerEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
                 TextboxEmailBenutzerEingabe.Text = "example@eurodata.de";
             }
         }
@@ -50,7 +53,7 @@ namespace ED_Login
             {
                 TextboxPasswortEingabe.Font = new Font(TextboxPasswortEingabe.Font, FontStyle.Regular);
                 TextboxPasswortEingabe.UseSystemPasswordChar = true;
-                TextboxPasswortEingabe.ForeColor = Color.Black;
+                TextboxPasswortEingabe.ForeColor = ColorTranslator.FromHtml("#3D494D");
                 TextboxPasswortEingabe.Text = "";
             }
         }        
@@ -61,7 +64,7 @@ namespace ED_Login
 
                 TextboxPasswortEingabe.Font = new Font(TextboxPasswortEingabe.Font, FontStyle.Italic);
                 TextboxPasswortEingabe.UseSystemPasswordChar = false;
-                TextboxPasswortEingabe.ForeColor = Color.Silver;
+                TextboxPasswortEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
                 TextboxPasswortEingabe.Text = "Passwort";
             }
         }
@@ -127,7 +130,7 @@ namespace ED_Login
                     if (LabelLoginErfolgreich.Visible == true)
                     {
                         this.Hide();
-                        Angemeldet angemeldet = new Angemeldet();
+                        Angemeldet angemeldet = new Angemeldet(TextboxEmailBenutzerEingabe.Text);
                         angemeldet.Show();
                         angemeldet.StartPosition = centerScreen;
                     }

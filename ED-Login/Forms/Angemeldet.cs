@@ -12,9 +12,10 @@ namespace ED_Login
 {
     public partial class Angemeldet : Form
     {
-        public Angemeldet()
+        public Angemeldet(string benutzername)
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#F2F6F7");
         }
 
     }

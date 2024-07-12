@@ -22,7 +22,8 @@ namespace ED_Login
         public Register()
         {
             InitializeComponent();
-     
+            this.BackColor = ColorTranslator.FromHtml("#F2F6F7");
+
         }
         private string HashPassword(string password)
         {

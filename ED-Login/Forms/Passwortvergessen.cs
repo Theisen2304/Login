@@ -18,6 +18,7 @@ namespace ED_Login.Forms
         public Passwortvergessen()
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#F2F6F7");
         }
         private string HashPassword(string password)
         {

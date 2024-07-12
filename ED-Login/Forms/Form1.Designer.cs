@@ -86,7 +86,7 @@ namespace ED_Login
             this.TextboxEmailBenutzerEingabe.BackColor = System.Drawing.Color.White;
             this.TextboxEmailBenutzerEingabe.CausesValidation = false;
             this.TextboxEmailBenutzerEingabe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextboxEmailBenutzerEingabe.ForeColor = System.Drawing.Color.Silver;
+            this.TextboxEmailBenutzerEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
             this.TextboxEmailBenutzerEingabe.Location = new System.Drawing.Point(293, 146);
             this.TextboxEmailBenutzerEingabe.Name = "TextboxEmailBenutzerEingabe";
             this.TextboxEmailBenutzerEingabe.Size = new System.Drawing.Size(199, 22);
@@ -98,7 +98,7 @@ namespace ED_Login
             // TextboxPasswortEingabe
             // 
             this.TextboxPasswortEingabe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextboxPasswortEingabe.ForeColor = System.Drawing.Color.Silver;
+            this.TextboxPasswortEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
             this.TextboxPasswortEingabe.Location = new System.Drawing.Point(293, 210);
             this.TextboxPasswortEingabe.Name = "TextboxPasswortEingabe";
             this.TextboxPasswortEingabe.Size = new System.Drawing.Size(199, 22);
@@ -110,7 +110,7 @@ namespace ED_Login
             // LabelEmailOderBenutzerName
             // 
             this.LabelEmailOderBenutzerName.AutoSize = true;
-            this.LabelEmailOderBenutzerName.ForeColor = System.Drawing.SystemColors.Control;
+            this.LabelEmailOderBenutzerName.ForeColor = ColorTranslator.FromHtml("#5E737A");
             this.LabelEmailOderBenutzerName.Location = new System.Drawing.Point(290, 127);
             this.LabelEmailOderBenutzerName.Name = "LabelEmailOderBenutzerName";
             this.LabelEmailOderBenutzerName.Size = new System.Drawing.Size(165, 16);
@@ -120,7 +120,7 @@ namespace ED_Login
             // LabelPasswort
             // 
             this.LabelPasswort.AutoSize = true;
-            this.LabelPasswort.ForeColor = System.Drawing.SystemColors.Control;
+            this.LabelPasswort.ForeColor = ColorTranslator.FromHtml("#5E737A");
             this.LabelPasswort.Location = new System.Drawing.Point(290, 191);
             this.LabelPasswort.Name = "LabelPasswort";
             this.LabelPasswort.Size = new System.Drawing.Size(62, 16);
@@ -131,7 +131,7 @@ namespace ED_Login
             // 
             this.LabelKeinKonto.AutoSize = true;
             this.LabelKeinKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelKeinKonto.ForeColor = System.Drawing.SystemColors.Control;
+            this.LabelKeinKonto.ForeColor = ColorTranslator.FromHtml("#5E737A");
             this.LabelKeinKonto.Location = new System.Drawing.Point(388, 235);
             this.LabelKeinKonto.Name = "LabelKeinKonto";
             this.LabelKeinKonto.Size = new System.Drawing.Size(104, 15);
@@ -142,7 +142,7 @@ namespace ED_Login
             // 
             this.RedirectRegistrieren.AutoSize = true;
             this.RedirectRegistrieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RedirectRegistrieren.LinkColor = System.Drawing.Color.Red;
+            this.RedirectRegistrieren.LinkColor = ColorTranslator.FromHtml("#007F9C");
             this.RedirectRegistrieren.Location = new System.Drawing.Point(388, 250);
             this.RedirectRegistrieren.Name = "RedirectRegistrieren";
             this.RedirectRegistrieren.Size = new System.Drawing.Size(100, 15);
@@ -156,7 +156,7 @@ namespace ED_Login
             // 
             this.RedirectPasswortVergessen.AutoSize = true;
             this.RedirectPasswortVergessen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RedirectPasswortVergessen.LinkColor = System.Drawing.Color.Red;
+            this.RedirectPasswortVergessen.LinkColor = ColorTranslator.FromHtml("#007F9C");
             this.RedirectPasswortVergessen.Location = new System.Drawing.Point(303, 235);
             this.RedirectPasswortVergessen.Name = "RedirectPasswortVergessen";
             this.RedirectPasswortVergessen.Size = new System.Drawing.Size(70, 30);
@@ -179,10 +179,10 @@ namespace ED_Login
             // 
             this.LabelLoginErfolgreich.AutoSize = true;
             this.LabelLoginErfolgreich.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelLoginErfolgreich.ForeColor = System.Drawing.Color.Lime;
+            this.LabelLoginErfolgreich.ForeColor = ColorTranslator.FromHtml("#5E737A");
             this.LabelLoginErfolgreich.Location = new System.Drawing.Point(246, 367);
             this.LabelLoginErfolgreich.Name = "LabelLoginErfolgreich";
-            this.LabelLoginErfolgreich.Size = new System.Drawing.Size(389, 58);
+            this.LabelLoginErfolgreich.Size = new System.Drawing.Size(311, 46);
             this.LabelLoginErfolgreich.TabIndex = 14;
             this.LabelLoginErfolgreich.Text = "Login Erfolgreich!";
             this.LabelLoginErfolgreich.Visible = false;
@@ -213,7 +213,7 @@ namespace ED_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.LabelPasswortfalsch);
             this.Controls.Add(this.LabelBenutzerEmailFalsch);
