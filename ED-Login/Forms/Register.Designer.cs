@@ -140,6 +140,7 @@
             // 
             // LabelName
             // 
+            this.LabelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelName.AutoSize = true;
             this.LabelName.Font = new System.Drawing.Font("Times New Roman", 7.8F);
             this.LabelName.Location = new System.Drawing.Point(272, 116);
@@ -149,7 +150,8 @@
             this.LabelName.Text = "Name";
             // 
             // checkBoxDatenschutz
-            // 
+            //
+            this.checkBoxDatenschutz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.checkBoxDatenschutz.AutoSize = true;
             this.checkBoxDatenschutz.Location = new System.Drawing.Point(275, 578);
             this.checkBoxDatenschutz.Name = "checkBoxDatenschutz";
@@ -160,7 +162,8 @@
             this.checkBoxDatenschutz.CheckedChanged += new System.EventHandler(this.CheckBoxDatenschutz_CheckedChanged);
             // 
             // LabelBenutzername
-            // 
+            //
+            this.LabelBenutzername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelBenutzername.AutoSize = true;
             this.LabelBenutzername.Font = new System.Drawing.Font("Times New Roman", 7.8F);
             this.LabelBenutzername.Location = new System.Drawing.Point(272, 192);
@@ -171,6 +174,7 @@
             // 
             // LabelEmail
             // 
+            this.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelEmail.AutoSize = true;
             this.LabelEmail.Font = new System.Drawing.Font("Times New Roman", 7.8F);
             this.LabelEmail.Location = new System.Drawing.Point(272, 271);
@@ -181,6 +185,7 @@
             // 
             // LabelPasswort
             // 
+            this.LabelPasswort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelPasswort.AutoSize = true;
             this.LabelPasswort.Font = new System.Drawing.Font("Times New Roman", 7.8F);
             this.LabelPasswort.Location = new System.Drawing.Point(272, 346);
@@ -191,6 +196,7 @@
             // 
             // LabelPasswortBestaetigen
             // 
+            this.LabelPasswortBestaetigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelPasswortBestaetigen.AutoSize = true;
             this.LabelPasswortBestaetigen.Font = new System.Drawing.Font("Times New Roman", 7.8F);
             this.LabelPasswortBestaetigen.Location = new System.Drawing.Point(272, 424);
@@ -201,6 +207,7 @@
             // 
             // LabelSicherheitsfrage
             // 
+            this.LabelSicherheitsfrage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelSicherheitsfrage.AutoSize = true;
             this.LabelSicherheitsfrage.Font = new System.Drawing.Font("Times New Roman", 7.8F);
             this.LabelSicherheitsfrage.Location = new System.Drawing.Point(272, 488);
