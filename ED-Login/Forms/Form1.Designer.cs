@@ -49,6 +49,7 @@ namespace ED_Login
             // ButtonLogin
             // 
             this.ButtonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
+            this.ButtonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ButtonLogin.ForeColor = System.Drawing.Color.White;
             this.ButtonLogin.Location = new System.Drawing.Point(344, 282);
             this.ButtonLogin.Name = "ButtonLogin";
@@ -146,6 +147,7 @@ namespace ED_Login
             // 
             // RedirectRegistrieren
             // 
+            this.RedirectRegistrieren.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
             this.RedirectRegistrieren.AutoSize = true;
             this.RedirectRegistrieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RedirectRegistrieren.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
@@ -174,9 +176,10 @@ namespace ED_Login
             // 
             // ButtonBeenden
             // 
-            this.ButtonBeenden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
-            this.ButtonBeenden.ForeColor = System.Drawing.Color.White;
-            this.ButtonBeenden.Location = new System.Drawing.Point(678, 404);
+            this.ButtonBeenden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(225)))), ((int)(((byte)(229)))));
+            this.ButtonBeenden.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonBeenden.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
+            this.ButtonBeenden.Location = new System.Drawing.Point(688, 454);
             this.ButtonBeenden.Name = "ButtonBeenden";
             this.ButtonBeenden.Size = new System.Drawing.Size(110, 34);
             this.ButtonBeenden.TabIndex = 13;
@@ -223,7 +226,7 @@ namespace ED_Login
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(810, 500);
             this.Controls.Add(this.LabelPasswortfalsch);
             this.Controls.Add(this.LabelBenutzerEmailFalsch);
             this.Controls.Add(this.LabelLoginErfolgreich);

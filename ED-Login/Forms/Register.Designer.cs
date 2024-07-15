@@ -37,7 +37,6 @@
             this.LabelName = new System.Windows.Forms.Label();
             this.checkBoxDatenschutz = new System.Windows.Forms.CheckBox();
             this.LabelBenutzername = new System.Windows.Forms.Label();
-            this.ButtonRegistrieren = new System.Windows.Forms.Button();
             this.LabelEmail = new System.Windows.Forms.Label();
             this.LabelPasswort = new System.Windows.Forms.Label();
             this.LabelPasswortBestaetigen = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.LabelEmailUngültig = new System.Windows.Forms.Label();
             this.LabelBereitsVergeben = new System.Windows.Forms.Label();
             this.LabelBenutzerbereitsvergeben = new System.Windows.Forms.Label();
+            this.OpacityRegistrierenButton = new ED_Login.TransparentButton();
             this.SuspendLayout();
             // 
             // LabelED
@@ -169,18 +169,6 @@
             this.LabelBenutzername.TabIndex = 12;
             this.LabelBenutzername.Text = "Benutzername";
             // 
-            // ButtonRegistrieren
-            // 
-            this.ButtonRegistrieren.Enabled = false;
-            this.ButtonRegistrieren.ForeColor = System.Drawing.Color.Silver;
-            this.ButtonRegistrieren.Location = new System.Drawing.Point(348, 624);
-            this.ButtonRegistrieren.Name = "ButtonRegistrieren";
-            this.ButtonRegistrieren.Size = new System.Drawing.Size(101, 36);
-            this.ButtonRegistrieren.TabIndex = 13;
-            this.ButtonRegistrieren.Text = "Registrieren";
-            this.ButtonRegistrieren.UseVisualStyleBackColor = true;
-            this.ButtonRegistrieren.Click += new System.EventHandler(this.Registrieren_Click);
-            // 
             // LabelEmail
             // 
             this.LabelEmail.AutoSize = true;
@@ -252,7 +240,7 @@
             // ButtonBeenden
             // 
             this.ButtonBeenden.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonBeenden.Location = new System.Drawing.Point(684, 659);
+            this.ButtonBeenden.Location = new System.Drawing.Point(684, 673);
             this.ButtonBeenden.Name = "ButtonBeenden";
             this.ButtonBeenden.Size = new System.Drawing.Size(94, 27);
             this.ButtonBeenden.TabIndex = 20;
@@ -263,7 +251,7 @@
             // ButtonZurueck
             // 
             this.ButtonZurueck.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ButtonZurueck.Location = new System.Drawing.Point(584, 659);
+            this.ButtonZurueck.Location = new System.Drawing.Point(584, 673);
             this.ButtonZurueck.Name = "ButtonZurueck";
             this.ButtonZurueck.Size = new System.Drawing.Size(94, 27);
             this.ButtonZurueck.TabIndex = 21;
@@ -325,12 +313,29 @@
             this.LabelBenutzerbereitsvergeben.Text = "Benutzername bereits vergeben";
             this.LabelBenutzerbereitsvergeben.Visible = false;
             // 
+            // OpacityRegistrierenButton
+            // 
+            this.OpacityRegistrierenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
+            this.OpacityRegistrierenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpacityRegistrierenButton.ForeColor = System.Drawing.Color.White;
+            this.OpacityRegistrierenButton.Location = new System.Drawing.Point(339, 622);
+            this.OpacityRegistrierenButton.Name = "OpacityRegistrierenButton";
+            this.OpacityRegistrierenButton.Opacity = 0.35F;
+            this.OpacityRegistrierenButton.Size = new System.Drawing.Size(111, 36);
+            this.OpacityRegistrierenButton.TabIndex = 27;
+            this.OpacityRegistrierenButton.Text = "Registrieren";
+            this.OpacityRegistrierenButton.UseVisualStyleBackColor = false;
+            this.OpacityRegistrierenButton.Click += new System.EventHandler(this.OpacityButton_Click);
+            this.OpacityRegistrierenButton.MouseEnter += new System.EventHandler(this.OpacityRegistrierenButton_MouseEnter);
+            this.OpacityRegistrierenButton.MouseLeave += new System.EventHandler(this.OpacityRegistrierenButton_MouseLeave);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(787, 712);
+            this.Controls.Add(this.OpacityRegistrierenButton);
             this.Controls.Add(this.LabelBenutzerbereitsvergeben);
             this.Controls.Add(this.LabelBereitsVergeben);
             this.Controls.Add(this.LabelEmailUngültig);
@@ -344,7 +349,6 @@
             this.Controls.Add(this.LabelPasswortBestaetigen);
             this.Controls.Add(this.LabelPasswort);
             this.Controls.Add(this.LabelEmail);
-            this.Controls.Add(this.ButtonRegistrieren);
             this.Controls.Add(this.LabelBenutzername);
             this.Controls.Add(this.checkBoxDatenschutz);
             this.Controls.Add(this.LabelName);
@@ -375,7 +379,6 @@
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.CheckBox checkBoxDatenschutz;
         private System.Windows.Forms.Label LabelBenutzername;
-        private System.Windows.Forms.Button ButtonRegistrieren;
         private System.Windows.Forms.Label LabelEmail;
         private System.Windows.Forms.Label LabelPasswort;
         private System.Windows.Forms.Label LabelPasswortBestaetigen;
@@ -389,5 +392,6 @@
         private System.Windows.Forms.Label LabelEmailUngültig;
         private System.Windows.Forms.Label LabelBereitsVergeben;
         private System.Windows.Forms.Label LabelBenutzerbereitsvergeben;
+        private TransparentButton OpacityRegistrierenButton;
     }
 }

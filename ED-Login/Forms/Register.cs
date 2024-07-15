@@ -41,29 +41,56 @@ namespace ED_Login
                 return builder.ToString();
             }
         }
-        private void Registrieren_Click(object sender, EventArgs e)
+        //private void Registrieren_Click(object sender, EventArgs e)
+        //{
+        //    int nextId = GetNextId();
+        //    bool istAdmin = false; // Beispielsweise
+        //    bool istAktiv = false;
+        //    bool zuletztangemeldet = false;
+
+        //    if (TextBoxBenutzername.Text == "Administrator")
+        //    {
+        //        istAdmin = true;
+        //    }
+
+        //    string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
+        //    string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
+
+        //    StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv"), true);
+        //    string neuezeile = nextId + ";" + TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
+        //        + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";" + (istAdmin ? "1" : "0") + ";" + (istAktiv ? "1" : "0") + ";" + (zuletztangemeldet ? "1" : "0") + ";";
+        //    sw.WriteLine(neuezeile);
+        //    sw.Close();
+        //    this.Hide();
+        //    Form1 form = new Form1();
+        //    form.Show();
+        //}
+        private void OpacityButton_Click(object sender, EventArgs e)
         {
-            int nextId = GetNextId();
-            bool istAdmin = false; // Beispielsweise
-            bool istAktiv = false;
-            bool zuletztangemeldet = false;
-
-            if (TextBoxBenutzername.Text == "Administrator")
+            
             {
-                istAdmin = true;
+                int nextId = GetNextId();
+                bool istAdmin = false; // Beispielsweise
+                bool istAktiv = false;
+                bool zuletztangemeldet = false;
+
+                if (TextBoxBenutzername.Text == "Administrator")
+                {
+                   istAdmin = true;
+                }
+
+                string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
+                string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
+
+                StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv"), true);
+                string neuezeile = nextId + ";" + TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
+                   + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";" + (istAdmin ? "1" : "0") + ";" + (istAktiv ? "1" : "0") + ";" + (zuletztangemeldet ? "1" : "0") + ";";
+                sw.WriteLine(neuezeile);
+                sw.Close();
+                this.Hide();
+                Form1 form = new Form1();
+                form.Show();
             }
-
-            string gehashtesPasswort = HashPassword(TextBoxPasswort.Text);
-            string gehashtesPasswortbestaetigen = HashPassword(TextBoxPasswortbestaetigen.Text);
-
-            StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv"), true);
-            string neuezeile = nextId + ";" + TextBoxName.Text + ";" + TextBoxBenutzername.Text + ";" + TextBoxEmail.Text + ";" + gehashtesPasswort + ";" + gehashtesPasswortbestaetigen + ";"
-                + ComboBoxFragen.SelectedIndex + ";" + TextBoxSicherheitsfrage.Text + ";" + (istAdmin ? "1" : "0") + ";" + (istAktiv ? "1" : "0") + ";" + (zuletztangemeldet ? "1" : "0") + ";";
-            sw.WriteLine(neuezeile);
-            sw.Close();
-            this.Hide();
-            Form1 form = new Form1();
-            form.Show();
         }
         private int GetNextId()
         {
@@ -326,13 +353,14 @@ namespace ED_Login
         {
             if (TextBoxName.Text != "" && LabelBenutzerbereitsvergeben.Visible == false && LabelBereitsVergeben.Visible == false && LabelEmailUngültig.Visible == false && LabelPasswortAnforderungen.Visible == false && LabelPasswortStimmtnichtüberein.Visible == false && ComboBoxFragen.SelectedIndex != -1 && TextBoxSicherheitsfrage.Text != "" && checkBoxDatenschutz.Checked == true)
             {
-                ButtonRegistrieren.ForeColor = Color.Black;
-                ButtonRegistrieren.Enabled = true;
+                OpacityRegistrierenButton.Enabled = true;
+                OpacityRegistrierenButton.Opacity = 1f;
+                OpacityRegistrierenButton.Update();
             }
             else
             {
-                ButtonRegistrieren.ForeColor = Color.Silver;
-                ButtonRegistrieren.Enabled = false;
+                OpacityRegistrierenButton.Enabled = false;
+                OpacityRegistrierenButton.Opacity = 0.35f;
             }
         }
         private void ComboBoxFragen_SelectedIndexChanged(object sender, EventArgs e)
@@ -343,6 +371,26 @@ namespace ED_Login
         {
             Registrierenbuttonüberprüfen();
         }
+
+        private void OpacityRegistrierenButton_MouseEnter(object sender, EventArgs e)
+        {
+            if (OpacityRegistrierenButton.Enabled == true)
+            {
+                OpacityRegistrierenButton.BackColor = ColorTranslator.FromHtml("#00718A");
+            }
+            else
+            {
+                OpacityRegistrierenButton.BackColor = ColorTranslator.FromHtml("#007F9C");
+            }
+            
+        }
+
+        private void OpacityRegistrierenButton_MouseLeave(object sender, EventArgs e)
+        {
+            OpacityRegistrierenButton.BackColor = ColorTranslator.FromHtml("#007F9C");
+        }
+
+
 
         //private void ButtonRegistrieren_EnabledChanged(object sender, EventArgs e)
         //{

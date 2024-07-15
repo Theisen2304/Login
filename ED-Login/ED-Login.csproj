@@ -111,6 +111,9 @@
     <Compile Include="Forms\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transparent.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Forms\Angemeldet.resx">
       <DependentUpon>Angemeldet.cs</DependentUpon>
     </EmbeddedResource>
