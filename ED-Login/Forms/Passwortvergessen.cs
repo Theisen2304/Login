@@ -119,16 +119,14 @@ namespace ED_Login.Forms
         }
         public void AccountErkannt()
         {
-            using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
+            using (StreamReader passreader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")))
             {
                 string Zeile;
-
                 while ((Zeile = passreader.ReadLine()) != null)
                 {
                     string[] Data = Zeile.Split(';');
                     // Data.Length einfügen
-
-                    if (Data.Length < 3)
+                    if (Data.Length <= 3)
                     {
                         continue;
                     }
@@ -148,15 +146,25 @@ namespace ED_Login.Forms
                                 TextBoxNeuesPasswortBestätigen.Visible = true;
                             }
                         }
-
                     }
                     else
                     {
                         LabelErkannt.Visible = false;
                         ComboBoxSicherheitsFragen.SelectedIndex = -1;
                     }
-
+                    bool emailEqual = Data[3].Trim() == TextBoxEmail.Text.Trim();
+                    bool usernameEqual = Data[2].Trim() == TextBoxBenutzerName.Text.Trim();
+                    Console.WriteLine($"Email-Vergleich: {emailEqual}, Benutzername-Vergleich: {usernameEqual}");
+                    Console.WriteLine("Email aus CSV: " + Data[3].Trim());
+                    Console.WriteLine("Email aus TextBox: " + TextBoxEmail.Text.Trim());
+                    Console.WriteLine("Benutzername aus CSV: " + Data[2].Trim());
+                    Console.WriteLine("Benutzername aus TextBox: " + TextBoxBenutzerName.Text.Trim());
+                    Console.WriteLine("Länge Email CSV: " + Data[3].Trim().Length);
+                    Console.WriteLine("Länge Email TextBox: " + TextBoxEmail.Text.Trim().Length);
+                    Console.WriteLine("Länge Benutzername CSV: " + Data[2].Trim().Length);
+                    Console.WriteLine("Länge Benutzername TextBox: " + TextBoxBenutzerName.Text.Trim().Length);
                 }
+
             }
         }
         private void ButtonSendenAntwort_Click(object sender, EventArgs e)

@@ -49,6 +49,7 @@
             this.LabelPWAnforderung = new System.Windows.Forms.Label();
             this.LabelPWÜbereinstimmung = new System.Windows.Forms.Label();
             this.ButtonÄndern = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // EDLabel
@@ -264,7 +265,7 @@
             this.LabelPWÜbereinstimmung.ForeColor = System.Drawing.Color.Red;
             this.LabelPWÜbereinstimmung.Location = new System.Drawing.Point(284, 306);
             this.LabelPWÜbereinstimmung.Name = "LabelPWÜbereinstimmung";
-            this.LabelPWÜbereinstimmung.Size = new System.Drawing.Size(260, 20);
+            this.LabelPWÜbereinstimmung.Size = new System.Drawing.Size(208, 16);
             this.LabelPWÜbereinstimmung.TabIndex = 19;
             this.LabelPWÜbereinstimmung.Text = "Passwörter stimmen nicht überein!";
             this.LabelPWÜbereinstimmung.Visible = false;
@@ -280,12 +281,24 @@
             this.ButtonÄndern.Visible = false;
             this.ButtonÄndern.Click += new System.EventHandler(this.ButtonÄndern_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Coral;
+            this.label1.Location = new System.Drawing.Point(104, 234);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
+            // 
             // Passwortvergessen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(536, 439);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonÄndern);
             this.Controls.Add(this.LabelPWÜbereinstimmung);
             this.Controls.Add(this.LabelPWAnforderung);
@@ -337,5 +350,6 @@
         private System.Windows.Forms.Label LabelPWAnforderung;
         private System.Windows.Forms.Label LabelPWÜbereinstimmung;
         private System.Windows.Forms.Button ButtonÄndern;
+        private System.Windows.Forms.Label label1;
     }
 }

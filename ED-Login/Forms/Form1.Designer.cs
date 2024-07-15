@@ -48,12 +48,14 @@ namespace ED_Login
             // 
             // ButtonLogin
             // 
-            this.ButtonLogin.Location = new System.Drawing.Point(356, 327);
+            this.ButtonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
+            this.ButtonLogin.ForeColor = System.Drawing.Color.White;
+            this.ButtonLogin.Location = new System.Drawing.Point(344, 282);
             this.ButtonLogin.Name = "ButtonLogin";
-            this.ButtonLogin.Size = new System.Drawing.Size(75, 25);
+            this.ButtonLogin.Size = new System.Drawing.Size(88, 40);
             this.ButtonLogin.TabIndex = 0;
             this.ButtonLogin.Text = "Login";
-            this.ButtonLogin.UseVisualStyleBackColor = true;
+            this.ButtonLogin.UseVisualStyleBackColor = false;
             this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 
             // labeled1temp
@@ -86,7 +88,7 @@ namespace ED_Login
             this.TextboxEmailBenutzerEingabe.BackColor = System.Drawing.Color.White;
             this.TextboxEmailBenutzerEingabe.CausesValidation = false;
             this.TextboxEmailBenutzerEingabe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextboxEmailBenutzerEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
+            this.TextboxEmailBenutzerEingabe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(139)))), ((int)(((byte)(153)))));
             this.TextboxEmailBenutzerEingabe.Location = new System.Drawing.Point(293, 146);
             this.TextboxEmailBenutzerEingabe.Name = "TextboxEmailBenutzerEingabe";
             this.TextboxEmailBenutzerEingabe.Size = new System.Drawing.Size(199, 22);
@@ -94,11 +96,13 @@ namespace ED_Login
             this.TextboxEmailBenutzerEingabe.Text = "example@eurodata.de";
             this.TextboxEmailBenutzerEingabe.Enter += new System.EventHandler(this.TextboxEmailBenutzerEingabe_Enter);
             this.TextboxEmailBenutzerEingabe.Leave += new System.EventHandler(this.TextboxEmailBenutzerEingabe_Leave);
+            this.TextboxEmailBenutzerEingabe.MouseEnter += new System.EventHandler(this.TextboxEmailBenutzerEingabe_MouseEnter);
+            this.TextboxEmailBenutzerEingabe.MouseLeave += new System.EventHandler(this.TextboxEmailBenutzerEingabe_MouseLeave);
             // 
             // TextboxPasswortEingabe
             // 
             this.TextboxPasswortEingabe.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextboxPasswortEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
+            this.TextboxPasswortEingabe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(139)))), ((int)(((byte)(153)))));
             this.TextboxPasswortEingabe.Location = new System.Drawing.Point(293, 210);
             this.TextboxPasswortEingabe.Name = "TextboxPasswortEingabe";
             this.TextboxPasswortEingabe.Size = new System.Drawing.Size(199, 22);
@@ -106,11 +110,13 @@ namespace ED_Login
             this.TextboxPasswortEingabe.Text = "Passwort";
             this.TextboxPasswortEingabe.Enter += new System.EventHandler(this.TextboxPasswortEingabe_Enter);
             this.TextboxPasswortEingabe.Leave += new System.EventHandler(this.TextboxPasswortEingabe_Leave);
+            this.TextboxPasswortEingabe.MouseEnter += new System.EventHandler(this.TextboxPasswortEingabe_MouseEnter);
+            this.TextboxPasswortEingabe.MouseLeave += new System.EventHandler(this.TextboxPasswortEingabe_MouseLeave);
             // 
             // LabelEmailOderBenutzerName
             // 
             this.LabelEmailOderBenutzerName.AutoSize = true;
-            this.LabelEmailOderBenutzerName.ForeColor = ColorTranslator.FromHtml("#5E737A");
+            this.LabelEmailOderBenutzerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelEmailOderBenutzerName.Location = new System.Drawing.Point(290, 127);
             this.LabelEmailOderBenutzerName.Name = "LabelEmailOderBenutzerName";
             this.LabelEmailOderBenutzerName.Size = new System.Drawing.Size(165, 16);
@@ -120,7 +126,7 @@ namespace ED_Login
             // LabelPasswort
             // 
             this.LabelPasswort.AutoSize = true;
-            this.LabelPasswort.ForeColor = ColorTranslator.FromHtml("#5E737A");
+            this.LabelPasswort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelPasswort.Location = new System.Drawing.Point(290, 191);
             this.LabelPasswort.Name = "LabelPasswort";
             this.LabelPasswort.Size = new System.Drawing.Size(62, 16);
@@ -131,7 +137,7 @@ namespace ED_Login
             // 
             this.LabelKeinKonto.AutoSize = true;
             this.LabelKeinKonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelKeinKonto.ForeColor = ColorTranslator.FromHtml("#5E737A");
+            this.LabelKeinKonto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelKeinKonto.Location = new System.Drawing.Point(388, 235);
             this.LabelKeinKonto.Name = "LabelKeinKonto";
             this.LabelKeinKonto.Size = new System.Drawing.Size(104, 15);
@@ -142,7 +148,7 @@ namespace ED_Login
             // 
             this.RedirectRegistrieren.AutoSize = true;
             this.RedirectRegistrieren.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RedirectRegistrieren.LinkColor = ColorTranslator.FromHtml("#007F9C");
+            this.RedirectRegistrieren.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
             this.RedirectRegistrieren.Location = new System.Drawing.Point(388, 250);
             this.RedirectRegistrieren.Name = "RedirectRegistrieren";
             this.RedirectRegistrieren.Size = new System.Drawing.Size(100, 15);
@@ -154,9 +160,10 @@ namespace ED_Login
             // 
             // RedirectPasswortVergessen
             // 
+            this.RedirectPasswortVergessen.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
             this.RedirectPasswortVergessen.AutoSize = true;
             this.RedirectPasswortVergessen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RedirectPasswortVergessen.LinkColor = ColorTranslator.FromHtml("#007F9C");
+            this.RedirectPasswortVergessen.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
             this.RedirectPasswortVergessen.Location = new System.Drawing.Point(303, 235);
             this.RedirectPasswortVergessen.Name = "RedirectPasswortVergessen";
             this.RedirectPasswortVergessen.Size = new System.Drawing.Size(70, 30);
@@ -167,19 +174,21 @@ namespace ED_Login
             // 
             // ButtonBeenden
             // 
-            this.ButtonBeenden.Location = new System.Drawing.Point(700, 414);
+            this.ButtonBeenden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
+            this.ButtonBeenden.ForeColor = System.Drawing.Color.White;
+            this.ButtonBeenden.Location = new System.Drawing.Point(678, 404);
             this.ButtonBeenden.Name = "ButtonBeenden";
-            this.ButtonBeenden.Size = new System.Drawing.Size(88, 24);
+            this.ButtonBeenden.Size = new System.Drawing.Size(110, 34);
             this.ButtonBeenden.TabIndex = 13;
             this.ButtonBeenden.Text = "Beenden";
-            this.ButtonBeenden.UseVisualStyleBackColor = true;
+            this.ButtonBeenden.UseVisualStyleBackColor = false;
             this.ButtonBeenden.Click += new System.EventHandler(this.ButtonBeenden_Click);
             // 
             // LabelLoginErfolgreich
             // 
             this.LabelLoginErfolgreich.AutoSize = true;
             this.LabelLoginErfolgreich.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelLoginErfolgreich.ForeColor = ColorTranslator.FromHtml("#5E737A");
+            this.LabelLoginErfolgreich.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelLoginErfolgreich.Location = new System.Drawing.Point(246, 367);
             this.LabelLoginErfolgreich.Name = "LabelLoginErfolgreich";
             this.LabelLoginErfolgreich.Size = new System.Drawing.Size(311, 46);

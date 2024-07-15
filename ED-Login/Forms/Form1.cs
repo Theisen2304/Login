@@ -20,6 +20,9 @@ namespace ED_Login
 {
     public partial class Form1 : Form
     {
+        public bool IstEMailFokussiert;
+        public bool IstPWFokussiert;
+
         private const FormStartPosition centerScreen = FormStartPosition.CenterScreen;
 
         public Form1()
@@ -30,6 +33,7 @@ namespace ED_Login
         }
         private void TextboxEmailBenutzerEingabe_Enter(object sender, EventArgs e)
         {
+            IstEMailFokussiert = true;
             if (TextboxEmailBenutzerEingabe.Text == "example@eurodata.de")
             {
 
@@ -37,6 +41,7 @@ namespace ED_Login
                 TextboxEmailBenutzerEingabe.ForeColor = ColorTranslator.FromHtml("#3D494D");
                 TextboxEmailBenutzerEingabe.Text = "";
             }
+            TextboxEmailBenutzerEingabe.BackColor = ColorTranslator.FromHtml("#DEE4E8");
         }
         private void TextboxEmailBenutzerEingabe_Leave(object sender, EventArgs e)
         {
@@ -46,9 +51,13 @@ namespace ED_Login
                 TextboxEmailBenutzerEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
                 TextboxEmailBenutzerEingabe.Text = "example@eurodata.de";
             }
+            TextboxEmailBenutzerEingabe.BackColor = Color.White;
+            IstEMailFokussiert = false;
+
         }
         private void TextboxPasswortEingabe_Enter(object sender, EventArgs e)
         {
+            IstPWFokussiert = true;
             if (TextboxPasswortEingabe.Text == "Passwort")
             {
                 TextboxPasswortEingabe.Font = new Font(TextboxPasswortEingabe.Font, FontStyle.Regular);
@@ -67,6 +76,8 @@ namespace ED_Login
                 TextboxPasswortEingabe.ForeColor = ColorTranslator.FromHtml("#688B99");
                 TextboxPasswortEingabe.Text = "Passwort";
             }
+            TextboxPasswortEingabe.BackColor = Color.White;
+            IstPWFokussiert = false;
         }
         private void RedirectPasswortVergessen_MouseClick(object sender, MouseEventArgs e)
         {
@@ -164,6 +175,41 @@ namespace ED_Login
                     builder.Append(bytes[i].ToString("x2"));
                 }
                 return builder.ToString();
+            }
+        }
+
+
+        private void TextboxEmailBenutzerEingabe_MouseLeave(object sender, EventArgs e)
+        {
+            if (IstEMailFokussiert == true)
+            {
+                TextboxEmailBenutzerEingabe.BackColor = ColorTranslator.FromHtml("#DEE4E8");
+            }
+            else
+            {
+                TextboxEmailBenutzerEingabe.BackColor = Color.White;
+            }
+        }
+
+        private void TextboxEmailBenutzerEingabe_MouseEnter(object sender, EventArgs e)
+        {
+            TextboxEmailBenutzerEingabe.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+
+        private void TextboxPasswortEingabe_MouseEnter(object sender, EventArgs e)
+        {
+            TextboxPasswortEingabe.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+
+        private void TextboxPasswortEingabe_MouseLeave(object sender, EventArgs e)
+        {
+            if (IstPWFokussiert == true)
+            {
+                TextboxPasswortEingabe.BackColor = ColorTranslator.FromHtml("#DEE4E8");
+            }
+            else
+            {
+                TextboxPasswortEingabe.BackColor = Color.White;
             }
         }
     }
