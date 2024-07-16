@@ -146,6 +146,7 @@ namespace ED_Login.Forms
                                 TextBoxNeuesPasswortBestätigen.Visible = true;
                             }
                         }
+                        break;
                     }
                     else
                     {
