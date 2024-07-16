@@ -113,128 +113,128 @@ namespace ED_Login
 
             return 1; 
         }
-        private void TextBoxEmail_Enter(object sender, EventArgs e)
-        {
-            if (TextBoxEmail.Text == "example@eurodata.de")
-            {
+        //private void TextBoxEmail_Enter(object sender, EventArgs e)
+        //{
+        //    if (TextBoxEmail.Text == "example@eurodata.de")
+        //    {
 
-                TextBoxEmail.Font = new Font(TextBoxEmail.Font, FontStyle.Regular);
-                TextBoxEmail.ForeColor = Color.Black;
-                TextBoxEmail.Text = "";
-            }
-        }
-        private void TextBoxEmail_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TextBoxEmail.Text))
-            {
-                TextBoxEmail.Font = new Font(TextBoxEmail.Font, FontStyle.Italic);
-                TextBoxEmail.ForeColor = Color.Silver;
-                TextBoxEmail.Text = "example@eurodata.de";
-            }
-            Registrierenbuttonüberprüfen();
-        }
-        private void TextBoxName_Enter(object sender, EventArgs e)
-        {
-            if (TextBoxName.Text == "Max Mustermann")
-            {
-                TextBoxName.Font = new Font(TextBoxName.Font, FontStyle.Regular);
-                TextBoxName.ForeColor = Color.Black;
-                TextBoxName.Text = "";
-            }
-        }
-        private void TextBoxName_Leave(object sender, EventArgs e)
-        {
-            if(string.IsNullOrWhiteSpace(TextBoxName.Text))
-            {
-                TextBoxName.Font = new Font (TextBoxName.Font, FontStyle.Italic);
-                TextBoxName.ForeColor = Color.Silver;
-                TextBoxName.Text = "Max Mustermann";
-            }
-            Registrierenbuttonüberprüfen();
+        //        TextBoxEmail.Font = new Font(TextBoxEmail.Font, FontStyle.Regular);
+        //        TextBoxEmail.ForeColor = Color.Black;
+        //        TextBoxEmail.Text = "";
+        //    }
+        //}
+        //private void TextBoxEmail_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TextBoxEmail.Text))
+        //    {
+        //        TextBoxEmail.Font = new Font(TextBoxEmail.Font, FontStyle.Italic);
+        //        TextBoxEmail.ForeColor = Color.Silver;
+        //        TextBoxEmail.Text = "example@eurodata.de";
+        //    }
+        //    Registrierenbuttonüberprüfen();
+        //}
+        //private void TextBoxName_Enter(object sender, EventArgs e)
+        //{
+        //    if (TextBoxName.Text == "Max Mustermann")
+        //    {
+        //        TextBoxName.Font = new Font(TextBoxName.Font, FontStyle.Regular);
+        //        TextBoxName.ForeColor = Color.Black;
+        //        TextBoxName.Text = "";
+        //    }
+        //}
+        //private void TextBoxName_Leave(object sender, EventArgs e)
+        //{
+        //    if(string.IsNullOrWhiteSpace(TextBoxName.Text))
+        //    {
+        //        TextBoxName.Font = new Font (TextBoxName.Font, FontStyle.Italic);
+        //        TextBoxName.ForeColor = Color.Silver;
+        //        TextBoxName.Text = "Max Mustermann";
+        //    }
+        //    Registrierenbuttonüberprüfen();
 
-        }
-        private void TextBoxBenutzername_Enter(object sender, EventArgs e)
-        {
-            if (TextBoxBenutzername.Text == "e.g ma.mustermann")
-            {
-                TextBoxBenutzername.Font = new Font(TextBoxBenutzername.Font, FontStyle.Regular);
-                TextBoxBenutzername.ForeColor = Color.Black;
-                TextBoxBenutzername.Text = "";
-            }
-        }
-        private void TextBoxBenutzername_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TextBoxBenutzername.Text))
-            {
-                TextBoxBenutzername.Font = new Font(TextBoxBenutzername.Font, FontStyle.Italic);
-                TextBoxBenutzername.ForeColor = Color.Silver;
-                TextBoxBenutzername.Text = "e.g ma.mustermann";
-            }
-            Registrierenbuttonüberprüfen();
-        }
-        private void TextBoxPasswort_Enter(object sender, EventArgs e)
-        {
-            if (TextBoxPasswort.Text == "Passwort")
-            {
-                TextBoxPasswort.Font = new Font(TextBoxPasswort.Font, FontStyle.Regular);
-                TextBoxPasswort.UseSystemPasswordChar = true;
-                TextBoxPasswort.ForeColor = Color.Black;
-                TextBoxPasswort.Text = "";
-            }
-        }
-        private void TextBoxPasswort_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TextBoxPasswort.Text))
-            {
-                TextBoxPasswort.Font = new Font(TextBoxPasswort.Font, FontStyle.Italic);
-                TextBoxPasswort.UseSystemPasswordChar = false;
-                TextBoxPasswort.ForeColor = Color.Silver;
-                TextBoxPasswort.Text = "Passwort";
-            }
-            Registrierenbuttonüberprüfen();
-        }
-        private void TextBoxPasswortbestaetigen_Enter(object sender, EventArgs e)
-        {
-            if (TextBoxPasswortbestaetigen.Text == "Passwort")
-            {
-                TextBoxPasswortbestaetigen.Font = new Font(TextBoxPasswortbestaetigen.Font, FontStyle.Regular);
-                TextBoxPasswortbestaetigen.UseSystemPasswordChar = true;
-                TextBoxPasswortbestaetigen.ForeColor = Color.Black;
-                TextBoxPasswortbestaetigen.Text = "";
-            }
+        //}
+        //private void TextBoxBenutzername_Enter(object sender, EventArgs e)
+        //{
+        //    if (TextBoxBenutzername.Text == "e.g ma.mustermann")
+        //    {
+        //        TextBoxBenutzername.Font = new Font(TextBoxBenutzername.Font, FontStyle.Regular);
+        //        TextBoxBenutzername.ForeColor = Color.Black;
+        //        TextBoxBenutzername.Text = "";
+        //    }
+        //}
+        //private void TextBoxBenutzername_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TextBoxBenutzername.Text))
+        //    {
+        //        TextBoxBenutzername.Font = new Font(TextBoxBenutzername.Font, FontStyle.Italic);
+        //        TextBoxBenutzername.ForeColor = Color.Silver;
+        //        TextBoxBenutzername.Text = "e.g ma.mustermann";
+        //    }
+        //    Registrierenbuttonüberprüfen();
+        //}
+        //private void TextBoxPasswort_Enter(object sender, EventArgs e)
+        //{
+        //    if (TextBoxPasswort.Text == "Passwort")
+        //    {
+        //        TextBoxPasswort.Font = new Font(TextBoxPasswort.Font, FontStyle.Regular);
+        //        TextBoxPasswort.UseSystemPasswordChar = true;
+        //        TextBoxPasswort.ForeColor = Color.Black;
+        //        TextBoxPasswort.Text = "";
+        //    }
+        //}
+        //private void TextBoxPasswort_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TextBoxPasswort.Text))
+        //    {
+        //        TextBoxPasswort.Font = new Font(TextBoxPasswort.Font, FontStyle.Italic);
+        //        TextBoxPasswort.UseSystemPasswordChar = false;
+        //        TextBoxPasswort.ForeColor = Color.Silver;
+        //        TextBoxPasswort.Text = "Passwort";
+        //    }
+        //    Registrierenbuttonüberprüfen();
+        //}
+        //private void TextBoxPasswortbestaetigen_Enter(object sender, EventArgs e)
+        //{
+        //    if (TextBoxPasswortbestaetigen.Text == "Passwort")
+        //    {
+        //        TextBoxPasswortbestaetigen.Font = new Font(TextBoxPasswortbestaetigen.Font, FontStyle.Regular);
+        //        TextBoxPasswortbestaetigen.UseSystemPasswordChar = true;
+        //        TextBoxPasswortbestaetigen.ForeColor = Color.Black;
+        //        TextBoxPasswortbestaetigen.Text = "";
+        //    }
 
-        }
-        private void TextBoxPasswortbestaetigen_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TextBoxPasswortbestaetigen.Text))
-            {
-                TextBoxPasswortbestaetigen.Font = new Font(TextBoxPasswortbestaetigen.Font, FontStyle.Italic);
-                TextBoxPasswortbestaetigen.UseSystemPasswordChar = false;
-                TextBoxPasswortbestaetigen.ForeColor = Color.Silver;
-                TextBoxPasswortbestaetigen.Text = "Passwort";
-            }
-            Registrierenbuttonüberprüfen();
-        }
-        private void TextBoxSicherheitsfrage_Enter(object sender, EventArgs e)
-        {
-            if (TextBoxSicherheitsfrage.Text == "Antwort")
-            {
-                TextBoxSicherheitsfrage.Font = new Font(TextBoxSicherheitsfrage.Font, FontStyle.Regular);
-                TextBoxSicherheitsfrage.ForeColor = Color.Black;
-                TextBoxSicherheitsfrage.Text = "";
-            }
-            Registrierenbuttonüberprüfen();
-        }
-        private void TextBoxSicherheitsfrage_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(TextBoxSicherheitsfrage.Text))
-            {
-                TextBoxSicherheitsfrage.Font = new Font(TextBoxSicherheitsfrage.Font, FontStyle.Italic);
-                TextBoxSicherheitsfrage.ForeColor = Color.Silver;
-                TextBoxSicherheitsfrage.Text = "Antwort";
-            }
-            Registrierenbuttonüberprüfen();
-        }
+        //}
+        //private void TextBoxPasswortbestaetigen_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TextBoxPasswortbestaetigen.Text))
+        //    {
+        //        TextBoxPasswortbestaetigen.Font = new Font(TextBoxPasswortbestaetigen.Font, FontStyle.Italic);
+        //        TextBoxPasswortbestaetigen.UseSystemPasswordChar = false;
+        //        TextBoxPasswortbestaetigen.ForeColor = Color.Silver;
+        //        TextBoxPasswortbestaetigen.Text = "Passwort";
+        //    }
+        //    Registrierenbuttonüberprüfen();
+        //}
+        //private void TextBoxSicherheitsfrage_Enter(object sender, EventArgs e)
+        //{
+        //    if (TextBoxSicherheitsfrage.Text == "Antwort")
+        //    {
+        //        TextBoxSicherheitsfrage.Font = new Font(TextBoxSicherheitsfrage.Font, FontStyle.Regular);
+        //        TextBoxSicherheitsfrage.ForeColor = Color.Black;
+        //        TextBoxSicherheitsfrage.Text = "";
+        //    }
+        //    Registrierenbuttonüberprüfen();
+        //}
+        //private void TextBoxSicherheitsfrage_Leave(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TextBoxSicherheitsfrage.Text))
+        //    {
+        //        TextBoxSicherheitsfrage.Font = new Font(TextBoxSicherheitsfrage.Font, FontStyle.Italic);
+        //        TextBoxSicherheitsfrage.ForeColor = Color.Silver;
+        //        TextBoxSicherheitsfrage.Text = "Antwort";
+        //    }
+        //    Registrierenbuttonüberprüfen();
+        //}
         private void ButtonBeenden_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -389,6 +389,56 @@ namespace ED_Login
         {
             OpacityRegistrierenButton.BackColor = ColorTranslator.FromHtml("#007F9C");
         }
+
+        private void TextBoxName_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxName.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+        private void TextBoxName_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxName.BackColor = Color.White;
+        }
+        private void TextBoxBenutzername_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxBenutzername.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+        private void TextBoxBenutzername_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxBenutzername.BackColor = Color.White;
+        }
+        private void TextBoxEmail_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxEmail.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+        private void TextBoxEmail_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxEmail.BackColor = Color.White;
+        }
+        private void TextBoxPasswort_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxPasswort.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+        private void TextBoxPasswort_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxPasswort.BackColor = Color.White;
+        }
+        private void TextBoxPasswortbestaetigen_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxPasswortbestaetigen.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+        private void TextBoxPasswortbestaetigen_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxPasswortbestaetigen.BackColor = Color.White;
+        }
+        private void TextBoxSicherheitsfrage_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxSicherheitsfrage.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+        private void TextBoxSicherheitsfrage_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxSicherheitsfrage.BackColor = Color.White;
+        }
+
 
 
 

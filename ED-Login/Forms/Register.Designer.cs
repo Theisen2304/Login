@@ -82,10 +82,9 @@
             this.TextBoxPasswort.Name = "TextBoxPasswort";
             this.TextBoxPasswort.Size = new System.Drawing.Size(247, 22);
             this.TextBoxPasswort.TabIndex = 2;
-            this.TextBoxPasswort.Text = "Passwort";
             this.TextBoxPasswort.TextChanged += new System.EventHandler(this.TextBoxPasswort_TextChanged);
-            this.TextBoxPasswort.Enter += new System.EventHandler(this.TextBoxPasswort_Enter);
-            this.TextBoxPasswort.Leave += new System.EventHandler(this.TextBoxPasswort_Leave);
+            this.TextBoxPasswort.MouseEnter += new System.EventHandler(this.TextBoxPasswort_MouseEnter);
+            this.TextBoxPasswort.MouseLeave += new System.EventHandler(this.TextBoxPasswort_MouseLeave);
             // 
             // TextBoxEmail
             // 
@@ -95,10 +94,9 @@
             this.TextBoxEmail.Name = "TextBoxEmail";
             this.TextBoxEmail.Size = new System.Drawing.Size(247, 22);
             this.TextBoxEmail.TabIndex = 3;
-            this.TextBoxEmail.Text = "example@eurodata.de";
             this.TextBoxEmail.TextChanged += new System.EventHandler(this.TextboxEmailBenutzerEingabe_TextChanged);
-            this.TextBoxEmail.Enter += new System.EventHandler(this.TextBoxEmail_Enter);
-            this.TextBoxEmail.Leave += new System.EventHandler(this.TextBoxEmail_Leave);
+            this.TextBoxEmail.MouseEnter += new System.EventHandler(this.TextBoxEmail_MouseEnter);
+            this.TextBoxEmail.MouseLeave += new System.EventHandler(this.TextBoxEmail_MouseLeave);
             // 
             // TextBoxBenutzername
             // 
@@ -108,10 +106,9 @@
             this.TextBoxBenutzername.Name = "TextBoxBenutzername";
             this.TextBoxBenutzername.Size = new System.Drawing.Size(247, 22);
             this.TextBoxBenutzername.TabIndex = 4;
-            this.TextBoxBenutzername.Text = "e.g ma.mustermann";
             this.TextBoxBenutzername.TextChanged += new System.EventHandler(this.TextBoxBenutzername_TextChanged);
-            this.TextBoxBenutzername.Enter += new System.EventHandler(this.TextBoxBenutzername_Enter);
-            this.TextBoxBenutzername.Leave += new System.EventHandler(this.TextBoxBenutzername_Leave);
+            this.TextBoxBenutzername.MouseEnter += new System.EventHandler(this.TextBoxBenutzername_MouseEnter);
+            this.TextBoxBenutzername.MouseLeave += new System.EventHandler(this.TextBoxBenutzername_MouseLeave);
             // 
             // TextBoxName
             // 
@@ -121,9 +118,8 @@
             this.TextBoxName.Name = "TextBoxName";
             this.TextBoxName.Size = new System.Drawing.Size(247, 22);
             this.TextBoxName.TabIndex = 5;
-            this.TextBoxName.Text = "Max Mustermann";
-            this.TextBoxName.Enter += new System.EventHandler(this.TextBoxName_Enter);
-            this.TextBoxName.Leave += new System.EventHandler(this.TextBoxName_Leave);
+            this.TextBoxName.MouseEnter += new System.EventHandler(this.TextBoxName_MouseEnter);
+            this.TextBoxName.MouseLeave += new System.EventHandler(this.TextBoxName_MouseLeave);
             // 
             // TextBoxPasswortbestaetigen
             // 
@@ -133,16 +129,15 @@
             this.TextBoxPasswortbestaetigen.Name = "TextBoxPasswortbestaetigen";
             this.TextBoxPasswortbestaetigen.Size = new System.Drawing.Size(247, 22);
             this.TextBoxPasswortbestaetigen.TabIndex = 6;
-            this.TextBoxPasswortbestaetigen.Text = "Passwort";
             this.TextBoxPasswortbestaetigen.TextChanged += new System.EventHandler(this.TextBoxPasswortbestaetigen_TextChanged);
-            this.TextBoxPasswortbestaetigen.Enter += new System.EventHandler(this.TextBoxPasswortbestaetigen_Enter);
-            this.TextBoxPasswortbestaetigen.Leave += new System.EventHandler(this.TextBoxPasswortbestaetigen_Leave);
+            this.TextBoxPasswortbestaetigen.MouseEnter += new System.EventHandler(this.TextBoxPasswortbestaetigen_MouseEnter);
+            this.TextBoxPasswortbestaetigen.MouseLeave += new System.EventHandler(this.TextBoxPasswortbestaetigen_MouseLeave);
             // 
             // LabelName
             // 
-            this.LabelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelName.AutoSize = true;
             this.LabelName.Font = new System.Drawing.Font("Times New Roman", 7.8F);
+            this.LabelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelName.Location = new System.Drawing.Point(272, 116);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(37, 15);
@@ -150,9 +145,9 @@
             this.LabelName.Text = "Name";
             // 
             // checkBoxDatenschutz
-            //
-            this.checkBoxDatenschutz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
+            // 
             this.checkBoxDatenschutz.AutoSize = true;
+            this.checkBoxDatenschutz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.checkBoxDatenschutz.Location = new System.Drawing.Point(275, 578);
             this.checkBoxDatenschutz.Name = "checkBoxDatenschutz";
             this.checkBoxDatenschutz.Size = new System.Drawing.Size(265, 20);
@@ -162,10 +157,10 @@
             this.checkBoxDatenschutz.CheckedChanged += new System.EventHandler(this.CheckBoxDatenschutz_CheckedChanged);
             // 
             // LabelBenutzername
-            //
-            this.LabelBenutzername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
+            // 
             this.LabelBenutzername.AutoSize = true;
             this.LabelBenutzername.Font = new System.Drawing.Font("Times New Roman", 7.8F);
+            this.LabelBenutzername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelBenutzername.Location = new System.Drawing.Point(272, 192);
             this.LabelBenutzername.Name = "LabelBenutzername";
             this.LabelBenutzername.Size = new System.Drawing.Size(82, 15);
@@ -174,9 +169,9 @@
             // 
             // LabelEmail
             // 
-            this.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelEmail.AutoSize = true;
             this.LabelEmail.Font = new System.Drawing.Font("Times New Roman", 7.8F);
+            this.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelEmail.Location = new System.Drawing.Point(272, 271);
             this.LabelEmail.Name = "LabelEmail";
             this.LabelEmail.Size = new System.Drawing.Size(39, 15);
@@ -185,9 +180,9 @@
             // 
             // LabelPasswort
             // 
-            this.LabelPasswort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelPasswort.AutoSize = true;
             this.LabelPasswort.Font = new System.Drawing.Font("Times New Roman", 7.8F);
+            this.LabelPasswort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelPasswort.Location = new System.Drawing.Point(272, 346);
             this.LabelPasswort.Name = "LabelPasswort";
             this.LabelPasswort.Size = new System.Drawing.Size(56, 15);
@@ -196,9 +191,9 @@
             // 
             // LabelPasswortBestaetigen
             // 
-            this.LabelPasswortBestaetigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelPasswortBestaetigen.AutoSize = true;
             this.LabelPasswortBestaetigen.Font = new System.Drawing.Font("Times New Roman", 7.8F);
+            this.LabelPasswortBestaetigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelPasswortBestaetigen.Location = new System.Drawing.Point(272, 424);
             this.LabelPasswortBestaetigen.Name = "LabelPasswortBestaetigen";
             this.LabelPasswortBestaetigen.Size = new System.Drawing.Size(115, 15);
@@ -207,9 +202,9 @@
             // 
             // LabelSicherheitsfrage
             // 
-            this.LabelSicherheitsfrage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelSicherheitsfrage.AutoSize = true;
             this.LabelSicherheitsfrage.Font = new System.Drawing.Font("Times New Roman", 7.8F);
+            this.LabelSicherheitsfrage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
             this.LabelSicherheitsfrage.Location = new System.Drawing.Point(272, 488);
             this.LabelSicherheitsfrage.Name = "LabelSicherheitsfrage";
             this.LabelSicherheitsfrage.Size = new System.Drawing.Size(93, 15);
@@ -240,9 +235,8 @@
             this.TextBoxSicherheitsfrage.Name = "TextBoxSicherheitsfrage";
             this.TextBoxSicherheitsfrage.Size = new System.Drawing.Size(247, 22);
             this.TextBoxSicherheitsfrage.TabIndex = 19;
-            this.TextBoxSicherheitsfrage.Text = "Antwort";
-            this.TextBoxSicherheitsfrage.Enter += new System.EventHandler(this.TextBoxSicherheitsfrage_Enter);
-            this.TextBoxSicherheitsfrage.Leave += new System.EventHandler(this.TextBoxSicherheitsfrage_Leave);
+            this.TextBoxSicherheitsfrage.MouseEnter += new System.EventHandler(this.TextBoxSicherheitsfrage_MouseEnter);
+            this.TextBoxSicherheitsfrage.MouseLeave += new System.EventHandler(this.TextBoxSicherheitsfrage_MouseLeave);
             // 
             // ButtonBeenden
             // 
@@ -340,7 +334,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(787, 712);
             this.Controls.Add(this.OpacityRegistrierenButton);
             this.Controls.Add(this.LabelBenutzerbereitsvergeben);
