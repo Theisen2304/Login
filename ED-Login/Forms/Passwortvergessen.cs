@@ -137,7 +137,7 @@ namespace ED_Login.Forms
                         if (int.TryParse(Data[6], out nummer))
                         {
                             ComboBoxSicherheitsFragen.SelectedIndex = nummer;
-                            if (TextBoxAntwort.Text == Data[6])
+                            if (TextBoxAntwort.Text == Data[7])
                             {
                                 LabelGeschafft.Visible = true;
                                 LabelNeuesPasswort.Visible = true;
@@ -152,17 +152,17 @@ namespace ED_Login.Forms
                         LabelErkannt.Visible = false;
                         ComboBoxSicherheitsFragen.SelectedIndex = -1;
                     }
-                    bool emailEqual = Data[3].Trim() == TextBoxEmail.Text.Trim();
-                    bool usernameEqual = Data[2].Trim() == TextBoxBenutzerName.Text.Trim();
-                    Console.WriteLine($"Email-Vergleich: {emailEqual}, Benutzername-Vergleich: {usernameEqual}");
-                    Console.WriteLine("Email aus CSV: " + Data[3].Trim());
-                    Console.WriteLine("Email aus TextBox: " + TextBoxEmail.Text.Trim());
-                    Console.WriteLine("Benutzername aus CSV: " + Data[2].Trim());
-                    Console.WriteLine("Benutzername aus TextBox: " + TextBoxBenutzerName.Text.Trim());
-                    Console.WriteLine("Länge Email CSV: " + Data[3].Trim().Length);
-                    Console.WriteLine("Länge Email TextBox: " + TextBoxEmail.Text.Trim().Length);
-                    Console.WriteLine("Länge Benutzername CSV: " + Data[2].Trim().Length);
-                    Console.WriteLine("Länge Benutzername TextBox: " + TextBoxBenutzerName.Text.Trim().Length);
+                    //bool emailEqual = Data[3].Trim() == TextBoxEmail.Text.Trim();
+                    //bool usernameEqual = Data[2].Trim() == TextBoxBenutzerName.Text.Trim();
+                    //Console.WriteLine($"Email-Vergleich: {emailEqual}, Benutzername-Vergleich: {usernameEqual}");
+                    //Console.WriteLine("Email aus CSV: " + Data[3].Trim());
+                    //Console.WriteLine("Email aus TextBox: " + TextBoxEmail.Text.Trim());
+                    //Console.WriteLine("Benutzername aus CSV: " + Data[2].Trim());
+                    //Console.WriteLine("Benutzername aus TextBox: " + TextBoxBenutzerName.Text.Trim());
+                    //Console.WriteLine("Länge Email CSV: " + Data[3].Trim().Length);
+                    //Console.WriteLine("Länge Email TextBox: " + TextBoxEmail.Text.Trim().Length);
+                    //Console.WriteLine("Länge Benutzername CSV: " + Data[2].Trim().Length);
+                    //Console.WriteLine("Länge Benutzername TextBox: " + TextBoxBenutzerName.Text.Trim().Length);
                 }
 
             }
