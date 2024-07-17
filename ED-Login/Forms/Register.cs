@@ -323,11 +323,11 @@ namespace ED_Login
                         {
                             return false;
                         }
-                        else if (Data[2] == TextBoxEmail.Text)
+                        else if (Data[3] == TextBoxEmail.Text)
                         {
                             LabelBereitsVergeben.Visible = true;
                         }
-                        if (Data[1] == TextBoxBenutzername.Text)
+                        if (Data[2] == TextBoxBenutzername.Text)
                         {
                             LabelBenutzerbereitsvergeben.Visible = true;
                         }

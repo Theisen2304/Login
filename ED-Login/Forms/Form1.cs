@@ -107,62 +107,62 @@ namespace ED_Login
              register.StartPosition = centerScreen;
              register.Show();
         }
-        private void ButtonLogin_Click(object sender, EventArgs e)
-        {
-            using (StreamReader passreader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")))
-            {
-                string Zeile;
-                string eingegebenespasswort;
-                eingegebenespasswort = HashPassword(TextboxPasswortEingabe.Text);
+        //private void ButtonLogin_Click(object sender, EventArgs e)
+        //{
+        //    using (StreamReader passreader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")))
+        //    {
+        //        string Zeile;
+        //        string eingegebenespasswort;
+        //        eingegebenespasswort = HashPassword(TextboxPasswortEingabe.Text);
 
-                while ((Zeile = passreader.ReadLine()) != null)
-                {
-                    string[] Data = Zeile.Split(';');
-                    // Data.Length einfügen
+        //        while ((Zeile = passreader.ReadLine()) != null)
+        //        {
+        //            string[] Data = Zeile.Split(';');
+        //            // Data.Length einfügen
 
-                    if (Data.Length < 3) 
-                    {
-                        continue;
-                    }
-                    if (Data[2] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort || Data[3] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort)
-                    {
-                        LabelLoginErfolgreich.Visible = true;
+        //            if (Data.Length < 3) 
+        //            {
+        //                continue;
+        //            }
+        //            if (Data[2] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort || Data[3] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort)
+        //            {
+        //                LabelLoginErfolgreich.Visible = true;
 
-                    }
-                    if (Data[2] == TextboxEmailBenutzerEingabe.Text || Data[3] == TextboxEmailBenutzerEingabe.Text)
-                    {
-                        if(LabelLoginErfolgreich.Visible == true)
-                        {
-                            LabelPasswortfalsch.Visible = false;
-                        }
-                        else
-                        {
-                            LabelPasswortfalsch.Visible = true;
-                        }
-                    }
-                    if (Data[4] == eingegebenespasswort)
-                    {
-                        if (LabelLoginErfolgreich.Visible == true)
-                        {
-                            LabelBenutzerEmailFalsch.Visible = false;
-                        }
-                        else
-                        {
-                            LabelBenutzerEmailFalsch.Visible = true;
-                        }
-                    }
+        //            }
+        //            if (Data[2] == TextboxEmailBenutzerEingabe.Text || Data[3] == TextboxEmailBenutzerEingabe.Text)
+        //            {
+        //                if(LabelLoginErfolgreich.Visible == true)
+        //                {
+        //                    LabelPasswortfalsch.Visible = false;
+        //                }
+        //                else
+        //                {
+        //                    LabelPasswortfalsch.Visible = true;
+        //                }
+        //            }
+        //            if (Data[4] == eingegebenespasswort)
+        //            {
+        //                if (LabelLoginErfolgreich.Visible == true)
+        //                {
+        //                    LabelBenutzerEmailFalsch.Visible = false;
+        //                }
+        //                else
+        //                {
+        //                    LabelBenutzerEmailFalsch.Visible = true;
+        //                }
+        //            }
 
-                    if (LabelLoginErfolgreich.Visible == true)
-                    {
-                        this.Hide();
-                        Angemeldet angemeldet = new Angemeldet(TextboxEmailBenutzerEingabe.Text);
-                        angemeldet.Show();
-                        angemeldet.StartPosition = centerScreen;
-                    }
+        //            if (LabelLoginErfolgreich.Visible == true)
+        //            {
+        //                this.Hide();
+        //                Angemeldet angemeldet = new Angemeldet(TextboxEmailBenutzerEingabe.Text);
+        //                angemeldet.Show();
+        //                angemeldet.StartPosition = centerScreen;
+        //            }
                     
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
         //public void Login(string username, string password)
         //{
         //    if (IsLoginSuccessful(username, password))
@@ -171,10 +171,6 @@ namespace ED_Login
         //        // Weiterer Code für erfolgreichen Login
         //    }
         //}
-        private void ButtonBeenden_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
         private string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
@@ -203,6 +199,7 @@ namespace ED_Login
             {
                 TextboxEmailBenutzerEingabe.BackColor = Color.White;
             }
+            IstButtonAktiv();
         }
 
         private void TextboxEmailBenutzerEingabe_MouseEnter(object sender, EventArgs e)
@@ -225,11 +222,96 @@ namespace ED_Login
             {
                 TextboxPasswortEingabe.BackColor = Color.White;
             }
+            IstButtonAktiv();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void IstButtonAktiv()
         {
+            if (string.IsNullOrWhiteSpace(TextboxEmailBenutzerEingabe.Text) || string.IsNullOrWhiteSpace(TextboxPasswortEingabe.Text))
+            {
+                NeuerLoginButton.Opacity = 0.35f;
+            }
+            else
+            {
+                NeuerLoginButton.Opacity = 1f;
+            }
+        }
 
+        private void NeuerLoginButton_Click(object sender, EventArgs e)
+        {
+            using (StreamReader passreader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")))
+            {
+                string Zeile;
+                string eingegebenespasswort;
+                eingegebenespasswort = HashPassword(TextboxPasswortEingabe.Text);
+
+                while ((Zeile = passreader.ReadLine()) != null)
+                {
+                    string[] Data = Zeile.Split(';');
+                    // Data.Length einfügen
+
+                    if (Data.Length < 3)
+                    {
+                        continue;
+                    }
+                    if (Data[2] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort || Data[3] == TextboxEmailBenutzerEingabe.Text && Data[4] == eingegebenespasswort)
+                    {
+                        LabelLoginErfolgreich.Visible = true;
+
+                    }
+                    if (Data[2] == TextboxEmailBenutzerEingabe.Text || Data[3] == TextboxEmailBenutzerEingabe.Text)
+                    {
+                        if (LabelLoginErfolgreich.Visible == true)
+                        {
+                            LabelPasswortfalsch.Visible = false;
+                        }
+                        else
+                        {
+                            LabelPasswortfalsch.Visible = true;
+                        }
+                    }
+                    if (Data[4] == eingegebenespasswort)
+                    {
+                        if (LabelLoginErfolgreich.Visible == true)
+                        {
+                            LabelBenutzerEmailFalsch.Visible = false;
+                        }
+                        else
+                        {
+                            LabelBenutzerEmailFalsch.Visible = true;
+                        }
+                    }
+
+                    if (LabelLoginErfolgreich.Visible == true)
+                    {
+                        this.Hide();
+                        Angemeldet angemeldet = new Angemeldet(TextboxEmailBenutzerEingabe.Text);
+                        angemeldet.Show();
+                        angemeldet.StartPosition = centerScreen;
+                    }
+
+                }
+            }
+        }
+
+        private void NeuerLoginButton_MouseEnter(object sender, EventArgs e)
+        {
+            NeuerLoginButton.BackColor = ColorTranslator.FromHtml("#00718A");
+        }
+
+        private void NeuerLoginButton_MouseLeave(object sender, EventArgs e)
+        {
+            NeuerLoginButton.BackColor = ColorTranslator.FromHtml("#007F9C");
+        }
+
+        private void TextboxEmailBenutzerEingabe_Leave(object sender, EventArgs e)
+        {
+            IstButtonAktiv();
+        }
+
+        private void TextboxPasswortEingabe_Leave(object sender, EventArgs e)
+        {
+            IstButtonAktiv();
         }
     }
 }

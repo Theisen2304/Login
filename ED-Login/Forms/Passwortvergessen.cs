@@ -152,6 +152,11 @@ namespace ED_Login.Forms
                     {
                         LabelErkannt.Visible = false;
                         ComboBoxSicherheitsFragen.SelectedIndex = -1;
+                        LabelGeschafft.Visible = false;
+                        LabelNeuesPasswort.Visible = false;
+                        LabelNeuesPasswortBestaetigen.Visible = false;
+                        TextBoxNeuesPasswort.Visible = false;
+                        TextBoxNeuesPasswortBestätigen.Visible = false;
                     }
                     //bool emailEqual = Data[3].Trim() == TextBoxEmail.Text.Trim();
                     //bool usernameEqual = Data[2].Trim() == TextBoxBenutzerName.Text.Trim();
@@ -168,10 +173,10 @@ namespace ED_Login.Forms
 
             }
         }
-        private void ButtonSendenAntwort_Click(object sender, EventArgs e)
-        {
-            AccountErkannt();
-        }
+        //private void SendenButton_Click(object sender, EventArgs e)
+        //{
+        //    AccountErkannt();
+        //}
         public bool Passwortüberprüfen()
         {
             string passwort = TextBoxNeuesPasswort.Text;
@@ -263,6 +268,14 @@ namespace ED_Login.Forms
             Form1 form1 = new Form1();
             form1.Show();
             form1.StartPosition = FormStartPosition.CenterScreen;
+        }
+        public void OpacitySendenButton()
+        {
+            
+        }
+        private void SendenButton_Click(object sender, EventArgs e)
+        {
+            AccountErkannt();
         }
     }
 }
