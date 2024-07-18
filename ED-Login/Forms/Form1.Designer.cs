@@ -131,8 +131,8 @@ namespace ED_Login
             // LabelBenutzerEmailFalsch
             // 
             this.LabelBenutzerEmailFalsch.AutoSize = true;
-            this.LabelBenutzerEmailFalsch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.LabelBenutzerEmailFalsch.ForeColor = System.Drawing.Color.Red;
+            this.LabelBenutzerEmailFalsch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
+            this.LabelBenutzerEmailFalsch.ForeColor = System.Drawing.Color.White;
             this.LabelBenutzerEmailFalsch.Location = new System.Drawing.Point(510, 149);
             this.LabelBenutzerEmailFalsch.Name = "LabelBenutzerEmailFalsch";
             this.LabelBenutzerEmailFalsch.Size = new System.Drawing.Size(165, 16);
@@ -143,8 +143,8 @@ namespace ED_Login
             // LabelPasswortfalsch
             // 
             this.LabelPasswortfalsch.AutoSize = true;
-            this.LabelPasswortfalsch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.LabelPasswortfalsch.ForeColor = System.Drawing.Color.Red;
+            this.LabelPasswortfalsch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
+            this.LabelPasswortfalsch.ForeColor = System.Drawing.Color.White;
             this.LabelPasswortfalsch.Location = new System.Drawing.Point(510, 213);
             this.LabelPasswortfalsch.Name = "LabelPasswortfalsch";
             this.LabelPasswortfalsch.Size = new System.Drawing.Size(108, 16);
