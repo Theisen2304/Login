@@ -55,6 +55,7 @@ namespace ED_Login
             this.TextboxEmailBenutzerEingabe.Name = "TextboxEmailBenutzerEingabe";
             this.TextboxEmailBenutzerEingabe.Size = new System.Drawing.Size(211, 22);
             this.TextboxEmailBenutzerEingabe.TabIndex = 5;
+            this.TextboxEmailBenutzerEingabe.TextChanged += new System.EventHandler(this.TextboxEmailBenutzerEingabe_TextChanged);
             this.TextboxEmailBenutzerEingabe.Enter += new System.EventHandler(this.TextboxEmailBenutzerEingabe_Enter);
             this.TextboxEmailBenutzerEingabe.Leave += new System.EventHandler(this.TextboxEmailBenutzerEingabe_Leave);
             this.TextboxEmailBenutzerEingabe.MouseEnter += new System.EventHandler(this.TextboxEmailBenutzerEingabe_MouseEnter);
@@ -68,6 +69,7 @@ namespace ED_Login
             this.TextboxPasswortEingabe.Name = "TextboxPasswortEingabe";
             this.TextboxPasswortEingabe.Size = new System.Drawing.Size(211, 22);
             this.TextboxPasswortEingabe.TabIndex = 6;
+            this.TextboxPasswortEingabe.TextChanged += new System.EventHandler(this.TextboxPasswortEingabe_TextChanged);
             this.TextboxPasswortEingabe.Enter += new System.EventHandler(this.TextboxPasswortEingabe_Enter);
             this.TextboxPasswortEingabe.Leave += new System.EventHandler(this.TextboxPasswortEingabe_Leave);
             this.TextboxPasswortEingabe.MouseEnter += new System.EventHandler(this.TextboxPasswortEingabe_MouseEnter);
@@ -129,6 +131,7 @@ namespace ED_Login
             // LabelBenutzerEmailFalsch
             // 
             this.LabelBenutzerEmailFalsch.AutoSize = true;
+            this.LabelBenutzerEmailFalsch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.LabelBenutzerEmailFalsch.ForeColor = System.Drawing.Color.Red;
             this.LabelBenutzerEmailFalsch.Location = new System.Drawing.Point(510, 149);
             this.LabelBenutzerEmailFalsch.Name = "LabelBenutzerEmailFalsch";
@@ -140,6 +143,7 @@ namespace ED_Login
             // LabelPasswortfalsch
             // 
             this.LabelPasswortfalsch.AutoSize = true;
+            this.LabelPasswortfalsch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.LabelPasswortfalsch.ForeColor = System.Drawing.Color.Red;
             this.LabelPasswortfalsch.Location = new System.Drawing.Point(510, 213);
             this.LabelPasswortfalsch.Name = "LabelPasswortfalsch";

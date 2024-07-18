@@ -16,6 +16,7 @@ namespace ED_Login
         {
             InitializeComponent();
             this.BackColor = ColorTranslator.FromHtml("#F2F6F7");
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
     }

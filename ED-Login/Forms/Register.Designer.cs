@@ -131,7 +131,7 @@
             this.checkBoxDatenschutz.AutoSize = true;
             this.checkBoxDatenschutz.Font = new System.Drawing.Font("Roboto", 9F);
             this.checkBoxDatenschutz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.checkBoxDatenschutz.Location = new System.Drawing.Point(258, 575);
+            this.checkBoxDatenschutz.Location = new System.Drawing.Point(254, 575);
             this.checkBoxDatenschutz.Name = "checkBoxDatenschutz";
             this.checkBoxDatenschutz.Size = new System.Drawing.Size(305, 22);
             this.checkBoxDatenschutz.TabIndex = 11;
@@ -235,6 +235,7 @@
             // LabelPasswortAnforderungen
             // 
             this.LabelPasswortAnforderungen.AutoSize = true;
+            this.LabelPasswortAnforderungen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.LabelPasswortAnforderungen.ForeColor = System.Drawing.Color.Red;
             this.LabelPasswortAnforderungen.Location = new System.Drawing.Point(528, 364);
             this.LabelPasswortAnforderungen.Name = "LabelPasswortAnforderungen";
@@ -247,7 +248,7 @@
             // LabelPasswortStimmtnichtüberein
             // 
             this.LabelPasswortStimmtnichtüberein.AutoSize = true;
-            this.LabelPasswortStimmtnichtüberein.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPasswortStimmtnichtüberein.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.LabelPasswortStimmtnichtüberein.ForeColor = System.Drawing.Color.Red;
             this.LabelPasswortStimmtnichtüberein.Location = new System.Drawing.Point(528, 445);
             this.LabelPasswortStimmtnichtüberein.Name = "LabelPasswortStimmtnichtüberein";
@@ -259,6 +260,7 @@
             // LabelEmailUngültig
             // 
             this.LabelEmailUngültig.AutoSize = true;
+            this.LabelEmailUngültig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.LabelEmailUngültig.ForeColor = System.Drawing.Color.Red;
             this.LabelEmailUngültig.Location = new System.Drawing.Point(528, 292);
             this.LabelEmailUngültig.Name = "LabelEmailUngültig";
@@ -270,6 +272,7 @@
             // LabelBereitsVergeben
             // 
             this.LabelBereitsVergeben.AutoSize = true;
+            this.LabelBereitsVergeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.LabelBereitsVergeben.ForeColor = System.Drawing.Color.Red;
             this.LabelBereitsVergeben.Location = new System.Drawing.Point(333, 269);
             this.LabelBereitsVergeben.Name = "LabelBereitsVergeben";
@@ -281,6 +284,7 @@
             // LabelBenutzerbereitsvergeben
             // 
             this.LabelBenutzerbereitsvergeben.AutoSize = true;
+            this.LabelBenutzerbereitsvergeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.LabelBenutzerbereitsvergeben.ForeColor = System.Drawing.Color.Red;
             this.LabelBenutzerbereitsvergeben.Location = new System.Drawing.Point(395, 190);
             this.LabelBenutzerbereitsvergeben.Name = "LabelBenutzerbereitsvergeben";
@@ -292,6 +296,7 @@
             // OpacityRegistrierenButton
             // 
             this.OpacityRegistrierenButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(156)))));
+            this.OpacityRegistrierenButton.Enabled = false;
             this.OpacityRegistrierenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpacityRegistrierenButton.ForeColor = System.Drawing.Color.White;
             this.OpacityRegistrierenButton.Location = new System.Drawing.Point(339, 603);

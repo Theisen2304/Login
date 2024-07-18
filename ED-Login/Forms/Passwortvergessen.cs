@@ -144,6 +144,7 @@ namespace ED_Login.Forms
                                 LabelNeuesPasswortBestaetigen.Visible = true;
                                 TextBoxNeuesPasswort.Visible = true;
                                 TextBoxNeuesPasswortBestätigen.Visible = true;
+                                ButtonÄndern.Visible = true;
                             }
                         }
                         break;
@@ -197,12 +198,14 @@ namespace ED_Login.Forms
                 if (TextBoxNeuesPasswort.Text != TextBoxNeuesPasswortBestätigen.Text)
                 {
                     LabelPWÜbereinstimmung.Visible = true;
-                    ButtonÄndern.Visible = false;
+                    ButtonÄndern.Opacity = 0.35f;
+                    ButtonÄndern.Enabled = false;
                 }
                 else
                 {
-                    LabelPWÜbereinstimmung.Visible = false;
-                    ButtonÄndern.Visible = true;
+                    LabelPWÜbereinstimmung.Visible = false;                
+                    ButtonÄndern.Opacity = 1f;
+                    ButtonÄndern.Enabled = true;
                 }
             }
         }
@@ -212,28 +215,144 @@ namespace ED_Login.Forms
             if (TextBoxNeuesPasswort.Text != TextBoxNeuesPasswortBestätigen.Text)
             {
                 LabelPWÜbereinstimmung.Visible = true;
-                ButtonÄndern.Visible = false;
+                ButtonÄndern.Opacity = 0.35f;
+                ButtonÄndern.Enabled = false;
             }
             else
             {
                 LabelPWÜbereinstimmung.Visible = false;
-                ButtonÄndern.Visible = true;
+                ButtonÄndern.Opacity = 1f;
+                ButtonÄndern.Enabled = true;
             }
         }
-        private void ButtonÄndern_Click(object sender, EventArgs e)
+        //private void ButtonÄndern_Click(object sender, EventArgs e)
+        //{
+        //    List<string> alleZeilen = new List<string>();
+        //    bool AenderungGetaetigt = false;
+
+        //    using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
+        //    {
+        //        string Zeile;
+        //        while ((Zeile = passreader.ReadLine()) != null)
+        //        {
+        //            string[] Data = Zeile.Split(';');
+
+                    
+        //            if (Data.Length < 6) 
+        //            {
+        //                alleZeilen.Add(Zeile);
+        //                continue;
+        //            }
+
+        //            // Benutzername und E-Mail überprüfen
+        //            if (Data[3] == TextBoxEmail.Text && Data[1] == TextBoxBenutzerName.Text)
+        //            {
+        //                // Änderungen vornehmen falls nötig
+        //                Data[4] = HashPassword(TextBoxNeuesPasswort.Text);
+        //                Data[5] = HashPassword(TextBoxNeuesPasswortBestätigen.Text);
+        //                AenderungGetaetigt = true;
+        //                alleZeilen.Add(string.Join(";", Data)); 
+        //            }
+        //            else
+        //            {
+        //                alleZeilen.Add(Zeile);
+        //            }
+        //        }
+        //    }
+        //    if (AenderungGetaetigt)
+        //    {
+        //        using (StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", false)) // false überschreibt die Datei
+        //        {
+        //            foreach (string zeile in alleZeilen)
+        //            {
+        //                sw.WriteLine(zeile);
+        //            }
+        //        }
+        //    }
+        //    this.Hide();
+        //    Form1 form1 = new Form1();
+        //    form1.Show();
+        //    form1.StartPosition = FormStartPosition.CenterScreen;
+        //}
+        public void OpacitySendenButtonAktiv()
+        {
+            if (!string.IsNullOrWhiteSpace(TextBoxAntwort.Text))
+            {
+                SendenButton.Opacity = 1f;
+            }
+            else
+            {
+                SendenButton.Opacity = 0.35f;
+            }
+        }
+        private void SendenButton_Click(object sender, EventArgs e)
+        {
+            AccountErkannt();
+        }
+
+        private void TextBoxAntwort_TextChanged(object sender, EventArgs e)
+        {
+            OpacitySendenButtonAktiv();
+        }
+
+        private void SendenButton_MouseEnter(object sender, EventArgs e)
+        {
+            if (SendenButton.Opacity == 1f)
+            {
+                SendenButton.BackColor = ColorTranslator.FromHtml("#00718A");
+            }
+            else
+            {
+                SendenButton.BackColor = ColorTranslator.FromHtml("#007F9C");
+            }
+        }
+
+        private void SendenButton_MouseLeave(object sender, EventArgs e)
+        {
+            SendenButton.BackColor = ColorTranslator.FromHtml("#007F9C");
+        }
+
+        private void ButtonZurueck_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonZurueck.BackColor = ColorTranslator.FromHtml("#D6DEE3"); 
+        }
+
+        private void ButtonZurueck_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonZurueck.BackColor = ColorTranslator.FromHtml("#DAE1E5");
+        }
+
+        private void ButtonÄndern_MouseEnter(object sender, EventArgs e)
+        {
+            if (ButtonÄndern.Opacity == 1f)
+            {
+                ButtonÄndern.BackColor = ColorTranslator.FromHtml("#00718A");
+            }
+            else
+            {
+                ButtonÄndern.BackColor = ColorTranslator.FromHtml("#007F9C");
+            }
+        }
+
+        private void ButtonÄndern_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonÄndern.BackColor = ColorTranslator.FromHtml("#007F9C");
+        }
+
+        private void ButtonÄndern_Click_1(object sender, EventArgs e)
         {
             List<string> alleZeilen = new List<string>();
             bool AenderungGetaetigt = false;
 
-            using (StreamReader passreader = new StreamReader("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv"))
+            using (StreamReader passreader = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv")))
             {
                 string Zeile;
                 while ((Zeile = passreader.ReadLine()) != null)
                 {
                     string[] Data = Zeile.Split(';');
 
-                    
-                    if (Data.Length < 6) 
+
+                    if (Data.Length < 6)
                     {
                         alleZeilen.Add(Zeile);
                         continue;
@@ -246,7 +365,7 @@ namespace ED_Login.Forms
                         Data[4] = HashPassword(TextBoxNeuesPasswort.Text);
                         Data[5] = HashPassword(TextBoxNeuesPasswortBestätigen.Text);
                         AenderungGetaetigt = true;
-                        alleZeilen.Add(string.Join(";", Data)); 
+                        alleZeilen.Add(string.Join(";", Data));
                     }
                     else
                     {
@@ -256,7 +375,7 @@ namespace ED_Login.Forms
             }
             if (AenderungGetaetigt)
             {
-                using (StreamWriter sw = new StreamWriter("C:/Users/ma.theisen/Documents/Backup/Projekt/ED-Login/ED-Login/CSVDATA/Benutzerdaten.csv", false)) // false überschreibt die Datei
+                using (StreamWriter sw = new StreamWriter(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\CSVDATA\Benutzerdaten.csv"),false)) // false überschreibt die Datei
                 {
                     foreach (string zeile in alleZeilen)
                     {
@@ -268,14 +387,6 @@ namespace ED_Login.Forms
             Form1 form1 = new Form1();
             form1.Show();
             form1.StartPosition = FormStartPosition.CenterScreen;
-        }
-        public void OpacitySendenButton()
-        {
-            
-        }
-        private void SendenButton_Click(object sender, EventArgs e)
-        {
-            AccountErkannt();
         }
     }
 }

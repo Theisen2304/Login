@@ -262,11 +262,12 @@ namespace ED_Login
                     if (Data[2] == TextboxEmailBenutzerEingabe.Text || Data[3] == TextboxEmailBenutzerEingabe.Text)
                     {
                         if (LabelLoginErfolgreich.Visible == true)
-                        {
+                        { 
                             LabelPasswortfalsch.Visible = false;
                         }
                         else
                         {
+
                             LabelPasswortfalsch.Visible = true;
                         }
                     }
@@ -310,6 +311,16 @@ namespace ED_Login
         }
 
         private void TextboxPasswortEingabe_Leave(object sender, EventArgs e)
+        {
+            IstButtonAktiv();
+        }
+
+        private void TextboxEmailBenutzerEingabe_TextChanged(object sender, EventArgs e)
+        {
+            IstButtonAktiv();
+        }
+
+        private void TextboxPasswortEingabe_TextChanged(object sender, EventArgs e)
         {
             IstButtonAktiv();
         }
