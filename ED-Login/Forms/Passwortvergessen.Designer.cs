@@ -92,6 +92,8 @@
             this.TextBoxBenutzerName.TextChanged += new System.EventHandler(this.TextBoxBenutzerName_TextChanged);
             this.TextBoxBenutzerName.Enter += new System.EventHandler(this.TextBoxBenutzerName_Enter);
             this.TextBoxBenutzerName.Leave += new System.EventHandler(this.TextBoxBenutzerName_Leave);
+            this.TextBoxBenutzerName.MouseEnter += new System.EventHandler(this.TextBoxBenutzerName_MouseEnter);
+            this.TextBoxBenutzerName.MouseLeave += new System.EventHandler(this.TextBoxBenutzerName_MouseLeave);
             // 
             // LabelBenutzerName
             // 
@@ -112,6 +114,8 @@
             this.TextBoxAntwort.Size = new System.Drawing.Size(305, 22);
             this.TextBoxAntwort.TabIndex = 6;
             this.TextBoxAntwort.TextChanged += new System.EventHandler(this.TextBoxAntwort_TextChanged);
+            this.TextBoxAntwort.MouseEnter += new System.EventHandler(this.TextBoxAntwort_MouseEnter);
+            this.TextBoxAntwort.MouseLeave += new System.EventHandler(this.TextBoxAntwort_MouseLeave);
             // 
             // TextBoxEmail
             // 
@@ -124,6 +128,8 @@
             this.TextBoxEmail.TextChanged += new System.EventHandler(this.TextBoxEmail_TextChanged);
             this.TextBoxEmail.Enter += new System.EventHandler(this.TextBoxEmail_Enter);
             this.TextBoxEmail.Leave += new System.EventHandler(this.TextBoxEmail_Leave);
+            this.TextBoxEmail.MouseEnter += new System.EventHandler(this.TextBoxEmail_MouseEnter);
+            this.TextBoxEmail.MouseLeave += new System.EventHandler(this.TextBoxEmail_MouseLeave);
             // 
             // LabelEmail
             // 
@@ -140,7 +146,7 @@
             // 
             this.LabelErkannt.AutoSize = true;
             this.LabelErkannt.Font = new System.Drawing.Font("Roboto", 12F);
-            this.LabelErkannt.ForeColor = System.Drawing.Color.Lime;
+            this.LabelErkannt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(161)))), ((int)(((byte)(105)))));
             this.LabelErkannt.Location = new System.Drawing.Point(177, 127);
             this.LabelErkannt.Name = "LabelErkannt";
             this.LabelErkannt.Size = new System.Drawing.Size(161, 24);
@@ -151,8 +157,8 @@
             // LabelEmailUngültig
             // 
             this.LabelEmailUngültig.AutoSize = true;
-            this.LabelEmailUngültig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.LabelEmailUngültig.ForeColor = System.Drawing.Color.Red;
+            this.LabelEmailUngültig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
+            this.LabelEmailUngültig.ForeColor = System.Drawing.Color.White;
             this.LabelEmailUngültig.Location = new System.Drawing.Point(295, 111);
             this.LabelEmailUngültig.Name = "LabelEmailUngültig";
             this.LabelEmailUngültig.Size = new System.Drawing.Size(97, 16);
@@ -184,6 +190,8 @@
             this.TextBoxNeuesPasswortBestätigen.TabIndex = 12;
             this.TextBoxNeuesPasswortBestätigen.Visible = false;
             this.TextBoxNeuesPasswortBestätigen.TextChanged += new System.EventHandler(this.TextBoxNeuesPasswortBestätigen_TextChanged);
+            this.TextBoxNeuesPasswortBestätigen.MouseEnter += new System.EventHandler(this.TextBoxNeuesPasswortBestätigen_MouseEnter);
+            this.TextBoxNeuesPasswortBestätigen.MouseLeave += new System.EventHandler(this.TextBoxNeuesPasswortBestätigen_MouseLeave);
             // 
             // TextBoxNeuesPasswort
             // 
@@ -194,6 +202,8 @@
             this.TextBoxNeuesPasswort.TabIndex = 13;
             this.TextBoxNeuesPasswort.Visible = false;
             this.TextBoxNeuesPasswort.TextChanged += new System.EventHandler(this.TextBoxNeuesPasswort_TextChanged);
+            this.TextBoxNeuesPasswort.MouseEnter += new System.EventHandler(this.TextBoxNeuesPasswort_MouseEnter);
+            this.TextBoxNeuesPasswort.MouseLeave += new System.EventHandler(this.TextBoxNeuesPasswort_MouseLeave);
             // 
             // LabelNeuesPasswort
             // 
@@ -223,7 +233,7 @@
             // 
             this.LabelGeschafft.AutoSize = true;
             this.LabelGeschafft.Font = new System.Drawing.Font("Roboto", 10F);
-            this.LabelGeschafft.ForeColor = System.Drawing.Color.Lime;
+            this.LabelGeschafft.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(161)))), ((int)(((byte)(105)))));
             this.LabelGeschafft.Location = new System.Drawing.Point(414, 203);
             this.LabelGeschafft.Name = "LabelGeschafft";
             this.LabelGeschafft.Size = new System.Drawing.Size(88, 20);
@@ -234,8 +244,8 @@
             // LabelPWAnforderung
             // 
             this.LabelPWAnforderung.AutoSize = true;
-            this.LabelPWAnforderung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.LabelPWAnforderung.ForeColor = System.Drawing.Color.Red;
+            this.LabelPWAnforderung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
+            this.LabelPWAnforderung.ForeColor = System.Drawing.Color.White;
             this.LabelPWAnforderung.Location = new System.Drawing.Point(104, 307);
             this.LabelPWAnforderung.Name = "LabelPWAnforderung";
             this.LabelPWAnforderung.Size = new System.Drawing.Size(272, 16);
@@ -246,8 +256,8 @@
             // LabelPWÜbereinstimmung
             // 
             this.LabelPWÜbereinstimmung.AutoSize = true;
-            this.LabelPWÜbereinstimmung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.LabelPWÜbereinstimmung.ForeColor = System.Drawing.Color.Red;
+            this.LabelPWÜbereinstimmung.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
+            this.LabelPWÜbereinstimmung.ForeColor = System.Drawing.Color.White;
             this.LabelPWÜbereinstimmung.Location = new System.Drawing.Point(104, 378);
             this.LabelPWÜbereinstimmung.Name = "LabelPWÜbereinstimmung";
             this.LabelPWÜbereinstimmung.Size = new System.Drawing.Size(208, 16);

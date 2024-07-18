@@ -388,5 +388,55 @@ namespace ED_Login.Forms
             form1.Show();
             form1.StartPosition = FormStartPosition.CenterScreen;
         }
+
+        private void TextBoxBenutzerName_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxBenutzerName.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+
+        private void TextBoxBenutzerName_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxBenutzerName.BackColor = Color.White;
+        }
+
+        private void TextBoxEmail_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxEmail.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+
+        private void TextBoxEmail_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxEmail.BackColor = Color.White;
+        }
+
+        private void TextBoxAntwort_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxAntwort.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+
+        private void TextBoxAntwort_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxAntwort.BackColor = Color.White;
+        }
+
+        private void TextBoxNeuesPasswort_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxNeuesPasswort.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+
+        private void TextBoxNeuesPasswort_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxNeuesPasswort.BackColor = Color.White;
+        }
+
+        private void TextBoxNeuesPasswortBestätigen_MouseEnter(object sender, EventArgs e)
+        {
+            TextBoxNeuesPasswortBestätigen.BackColor = ColorTranslator.FromHtml("#E4E9EC");
+        }
+
+        private void TextBoxNeuesPasswortBestätigen_MouseLeave(object sender, EventArgs e)
+        {
+            TextBoxNeuesPasswortBestätigen.BackColor = Color.White;
+        }
     }
 }

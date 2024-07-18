@@ -235,17 +235,17 @@ namespace ED_Login
         //    }
         //    Registrierenbuttonüberprüfen();
         //}
-        private void ButtonBeenden_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void ButtonZurueck_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.StartPosition = FormStartPosition.CenterScreen;
-            form1.Show();
-        }
+        //private void ButtonBeenden_Click(object sender, EventArgs e)
+        //{
+        //    Application.Exit();
+        //}
+        //private void ButtonZurueck_Click(object sender, EventArgs e)
+        //{
+        //    this.Hide();
+        //    Form1 form1 = new Form1();
+        //    form1.StartPosition = FormStartPosition.CenterScreen;
+        //    form1.Show();
+        //}
         public bool Passwortüberprüfen()
         {
             string passwort = TextBoxPasswort.Text;
@@ -438,6 +438,25 @@ namespace ED_Login
         {
             TextBoxSicherheitsfrage.BackColor = Color.White;
         }
+
+        private void ButtonZurueck_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.StartPosition = FormStartPosition.CenterScreen;
+            form1.Show();
+        }
+
+        private void ButtonZurueck_MouseEnter(object sender, EventArgs e)
+        {
+            ButtonZurueck.BackColor = ColorTranslator.FromHtml("#D6DEE3");
+        }
+
+        private void ButtonZurueck_MouseLeave(object sender, EventArgs e)
+        {
+            ButtonZurueck.BackColor = ColorTranslator.FromHtml("#DAE1E5");
+        }
+
 
 
 
