@@ -286,7 +286,7 @@ namespace ED_Login
                     if (LabelLoginErfolgreich.Visible == true)
                     {
                         this.Hide();
-                        Angemeldet angemeldet = new Angemeldet(TextboxEmailBenutzerEingabe.Text);
+                        Angemeldet angemeldet = new Angemeldet(Data[2], Data[9]);
                         angemeldet.Show();
                         angemeldet.StartPosition = centerScreen;
                     }

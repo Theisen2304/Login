@@ -359,7 +359,7 @@ namespace ED_Login.Forms
                     }
 
                     // Benutzername und E-Mail überprüfen
-                    if (Data[3] == TextBoxEmail.Text && Data[1] == TextBoxBenutzerName.Text)
+                    if (Data[3] == TextBoxEmail.Text && Data[2] == TextBoxBenutzerName.Text)
                     {
                         // Änderungen vornehmen falls nötig
                         Data[4] = HashPassword(TextBoxNeuesPasswort.Text);

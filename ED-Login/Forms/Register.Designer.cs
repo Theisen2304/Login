@@ -263,7 +263,7 @@
             this.LabelBereitsVergeben.AutoSize = true;
             this.LabelBereitsVergeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
             this.LabelBereitsVergeben.ForeColor = System.Drawing.Color.White;
-            this.LabelBereitsVergeben.Location = new System.Drawing.Point(333, 269);
+            this.LabelBereitsVergeben.Location = new System.Drawing.Point(296, 268);
             this.LabelBereitsVergeben.Name = "LabelBereitsVergeben";
             this.LabelBereitsVergeben.Size = new System.Drawing.Size(145, 16);
             this.LabelBereitsVergeben.TabIndex = 25;
@@ -275,7 +275,7 @@
             this.LabelBenutzerbereitsvergeben.AutoSize = true;
             this.LabelBenutzerbereitsvergeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
             this.LabelBenutzerbereitsvergeben.ForeColor = System.Drawing.Color.White;
-            this.LabelBenutzerbereitsvergeben.Location = new System.Drawing.Point(395, 190);
+            this.LabelBenutzerbereitsvergeben.Location = new System.Drawing.Point(358, 189);
             this.LabelBenutzerbereitsvergeben.Name = "LabelBenutzerbereitsvergeben";
             this.LabelBenutzerbereitsvergeben.Size = new System.Drawing.Size(198, 16);
             this.LabelBenutzerbereitsvergeben.TabIndex = 26;
