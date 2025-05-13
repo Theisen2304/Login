@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{52556F05-18AF-4362-B44C-24FB20864830}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ED_Login</RootNamespace>
-    <AssemblyName>ED-Login</AssemblyName>
+    <RootNamespace>SecDashboard</RootNamespace>
+    <AssemblyName>SecDashboard</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,14 +36,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="ExCSS, Version=4.2.5.0, Culture=neutral, PublicKeyToken=bdbe16be9b936b9a, processorArchitecture=MSIL">
       <HintPath>..\packages\ExCSS.4.2.5\lib\netstandard2.0\ExCSS.dll</HintPath>
     </Reference>
     <Reference Include="HarfBuzzSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\HarfBuzzSharp.7.3.0.2\lib\net462\HarfBuzzSharp.dll</HintPath>
     </Reference>
-    <Reference Include="ShimSkiaSharp, Version=1.0.0.18, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
-      <HintPath>..\packages\ShimSkiaSharp.1.0.0.18\lib\net461\ShimSkiaSharp.dll</HintPath>
+    <Reference Include="ShimSkiaSharp, Version=1.0.0.19, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShimSkiaSharp.1.0.0.19\lib\net461\ShimSkiaSharp.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\SkiaSharp.2.88.8\lib\net462\SkiaSharp.dll</HintPath>
@@ -50,14 +57,14 @@
     <Reference Include="SkiaSharp.HarfBuzz, Version=2.88.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\SkiaSharp.HarfBuzz.2.88.8\lib\net462\SkiaSharp.HarfBuzz.dll</HintPath>
     </Reference>
-    <Reference Include="Svg.Custom, Version=1.0.0.18, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
-      <HintPath>..\packages\Svg.Custom.1.0.0.18\lib\netstandard2.0\Svg.Custom.dll</HintPath>
+    <Reference Include="Svg.Custom, Version=1.0.0.19, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg.Custom.1.0.0.19\lib\netstandard2.0\Svg.Custom.dll</HintPath>
     </Reference>
-    <Reference Include="Svg.Model, Version=1.0.0.18, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
-      <HintPath>..\packages\Svg.Model.1.0.0.18\lib\net461\Svg.Model.dll</HintPath>
+    <Reference Include="Svg.Model, Version=1.0.0.19, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg.Model.1.0.0.19\lib\net461\Svg.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Svg.Skia, Version=1.0.0.18, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
-      <HintPath>..\packages\Svg.Skia.1.0.0.18\lib\net461\Svg.Skia.dll</HintPath>
+    <Reference Include="Svg.Skia, Version=1.0.0.19, Culture=neutral, PublicKeyToken=dafe96fe6c845a74, processorArchitecture=MSIL">
+      <HintPath>..\packages\Svg.Skia.1.0.0.19\lib\net461\Svg.Skia.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
@@ -65,7 +72,17 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.119.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.119.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -87,17 +104,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupManager.cs" />
+    <Compile Include="Forms\BackUpManagerFenster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BackUpManagerFenster.Designer.cs">
+      <DependentUpon>BackUpManagerFenster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datenbankmanager.cs" />
     <Compile Include="Forms\Angemeldet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Angemeldet.Designer.cs">
       <DependentUpon>Angemeldet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Passwortvergessen.cs">
       <SubType>Form</SubType>
@@ -119,8 +144,11 @@
     <EmbeddedResource Include="Forms\Angemeldet.resx">
       <DependentUpon>Angemeldet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\BackUpManagerFenster.resx">
+      <DependentUpon>BackUpManagerFenster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Passwortvergessen.resx">
       <DependentUpon>Passwortvergessen.cs</DependentUpon>
@@ -139,6 +167,7 @@
     </EmbeddedResource>
     <None Include="Benutzer.config" />
     <None Include="CSVDATA\Benutzerdaten.csv" />
+    <None Include="login_history.sqlite" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,9 +182,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\HarfBuzzSharp.NativeAssets.macOS.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.macOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -166,8 +193,13 @@
     <Error Condition="!Exists('..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets'))" />
     <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
     <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
   </Target>
   <Import Project="..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\HarfBuzzSharp.NativeAssets.Win32.7.3.0.2\build\net462\HarfBuzzSharp.NativeAssets.Win32.targets')" />
   <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.8\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
   <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.8\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
 </Project>

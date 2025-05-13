@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using SecDashboard;
 
-namespace ED_Login
+namespace SecDashboard
 {
     internal static class Program
     {
@@ -17,7 +19,8 @@ namespace ED_Login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            DatenBankManager.InitializeDatabase();
+            Application.Run(new Login());
         }
     }
 }

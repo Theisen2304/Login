@@ -1,4 +1,4 @@
-﻿namespace ED_Login
+﻿namespace SecDashboard
 {
     partial class Register
     {
@@ -27,7 +27,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.TextBoxPasswort = new System.Windows.Forms.TextBox();
             this.TextBoxEmail = new System.Windows.Forms.TextBox();
             this.TextBoxBenutzername = new System.Windows.Forms.TextBox();
@@ -47,19 +46,18 @@
             this.LabelEmailUngültig = new System.Windows.Forms.Label();
             this.LabelBereitsVergeben = new System.Windows.Forms.Label();
             this.LabelBenutzerbereitsvergeben = new System.Windows.Forms.Label();
-            this.EDLogo = new System.Windows.Forms.PictureBox();
-            this.ButtonZurueck = new ED_Login.TransparentButton();
-            this.OpacityRegistrierenButton = new ED_Login.TransparentButton();
-            ((System.ComponentModel.ISupportInitialize)(this.EDLogo)).BeginInit();
+            this.ButtonZurueck = new SecDashboard.TransparentButton();
+            this.OpacityRegistrierenButton = new SecDashboard.TransparentButton();
             this.SuspendLayout();
             // 
             // TextBoxPasswort
             // 
             this.TextBoxPasswort.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxPasswort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
-            this.TextBoxPasswort.Location = new System.Drawing.Point(238, 364);
+            this.TextBoxPasswort.Location = new System.Drawing.Point(178, 296);
+            this.TextBoxPasswort.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPasswort.Name = "TextBoxPasswort";
-            this.TextBoxPasswort.Size = new System.Drawing.Size(321, 22);
+            this.TextBoxPasswort.Size = new System.Drawing.Size(242, 19);
             this.TextBoxPasswort.TabIndex = 2;
             this.TextBoxPasswort.UseSystemPasswordChar = true;
             this.TextBoxPasswort.TextChanged += new System.EventHandler(this.TextBoxPasswort_TextChanged);
@@ -70,9 +68,10 @@
             // 
             this.TextBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
-            this.TextBoxEmail.Location = new System.Drawing.Point(238, 289);
+            this.TextBoxEmail.Location = new System.Drawing.Point(178, 235);
+            this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxEmail.Name = "TextBoxEmail";
-            this.TextBoxEmail.Size = new System.Drawing.Size(321, 22);
+            this.TextBoxEmail.Size = new System.Drawing.Size(242, 19);
             this.TextBoxEmail.TabIndex = 3;
             this.TextBoxEmail.TextChanged += new System.EventHandler(this.TextboxEmailBenutzerEingabe_TextChanged);
             this.TextBoxEmail.MouseEnter += new System.EventHandler(this.TextBoxEmail_MouseEnter);
@@ -82,9 +81,10 @@
             // 
             this.TextBoxBenutzername.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxBenutzername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
-            this.TextBoxBenutzername.Location = new System.Drawing.Point(238, 210);
+            this.TextBoxBenutzername.Location = new System.Drawing.Point(178, 171);
+            this.TextBoxBenutzername.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxBenutzername.Name = "TextBoxBenutzername";
-            this.TextBoxBenutzername.Size = new System.Drawing.Size(321, 22);
+            this.TextBoxBenutzername.Size = new System.Drawing.Size(242, 19);
             this.TextBoxBenutzername.TabIndex = 4;
             this.TextBoxBenutzername.TextChanged += new System.EventHandler(this.TextBoxBenutzername_TextChanged);
             this.TextBoxBenutzername.MouseEnter += new System.EventHandler(this.TextBoxBenutzername_MouseEnter);
@@ -94,9 +94,10 @@
             // 
             this.TextBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
-            this.TextBoxName.Location = new System.Drawing.Point(238, 130);
+            this.TextBoxName.Location = new System.Drawing.Point(178, 106);
+            this.TextBoxName.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxName.Name = "TextBoxName";
-            this.TextBoxName.Size = new System.Drawing.Size(321, 22);
+            this.TextBoxName.Size = new System.Drawing.Size(242, 19);
             this.TextBoxName.TabIndex = 5;
             this.TextBoxName.MouseEnter += new System.EventHandler(this.TextBoxName_MouseEnter);
             this.TextBoxName.MouseLeave += new System.EventHandler(this.TextBoxName_MouseLeave);
@@ -105,9 +106,10 @@
             // 
             this.TextBoxPasswortbestaetigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxPasswortbestaetigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
-            this.TextBoxPasswortbestaetigen.Location = new System.Drawing.Point(238, 442);
+            this.TextBoxPasswortbestaetigen.Location = new System.Drawing.Point(178, 359);
+            this.TextBoxPasswortbestaetigen.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxPasswortbestaetigen.Name = "TextBoxPasswortbestaetigen";
-            this.TextBoxPasswortbestaetigen.Size = new System.Drawing.Size(321, 22);
+            this.TextBoxPasswortbestaetigen.Size = new System.Drawing.Size(242, 19);
             this.TextBoxPasswortbestaetigen.TabIndex = 6;
             this.TextBoxPasswortbestaetigen.UseSystemPasswordChar = true;
             this.TextBoxPasswortbestaetigen.TextChanged += new System.EventHandler(this.TextBoxPasswortbestaetigen_TextChanged);
@@ -120,9 +122,10 @@
             this.LabelName.BackColor = System.Drawing.Color.Transparent;
             this.LabelName.Font = new System.Drawing.Font("Roboto", 10F);
             this.LabelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.LabelName.Location = new System.Drawing.Point(234, 107);
+            this.LabelName.Location = new System.Drawing.Point(176, 87);
+            this.LabelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelName.Name = "LabelName";
-            this.LabelName.Size = new System.Drawing.Size(54, 20);
+            this.LabelName.Size = new System.Drawing.Size(45, 17);
             this.LabelName.TabIndex = 10;
             this.LabelName.Text = "Name";
             // 
@@ -131,9 +134,10 @@
             this.checkBoxDatenschutz.AutoSize = true;
             this.checkBoxDatenschutz.Font = new System.Drawing.Font("Roboto", 9F);
             this.checkBoxDatenschutz.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.checkBoxDatenschutz.Location = new System.Drawing.Point(254, 575);
+            this.checkBoxDatenschutz.Location = new System.Drawing.Point(190, 467);
+            this.checkBoxDatenschutz.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxDatenschutz.Name = "checkBoxDatenschutz";
-            this.checkBoxDatenschutz.Size = new System.Drawing.Size(305, 22);
+            this.checkBoxDatenschutz.Size = new System.Drawing.Size(249, 18);
             this.checkBoxDatenschutz.TabIndex = 11;
             this.checkBoxDatenschutz.Text = "Ich stimme den Datenschutzrichtlinien zu";
             this.checkBoxDatenschutz.UseVisualStyleBackColor = true;
@@ -144,9 +148,10 @@
             this.LabelBenutzername.AutoSize = true;
             this.LabelBenutzername.Font = new System.Drawing.Font("Roboto", 10F);
             this.LabelBenutzername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.LabelBenutzername.Location = new System.Drawing.Point(234, 186);
+            this.LabelBenutzername.Location = new System.Drawing.Point(176, 151);
+            this.LabelBenutzername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelBenutzername.Name = "LabelBenutzername";
-            this.LabelBenutzername.Size = new System.Drawing.Size(118, 20);
+            this.LabelBenutzername.Size = new System.Drawing.Size(99, 17);
             this.LabelBenutzername.TabIndex = 12;
             this.LabelBenutzername.Text = "Benutzername";
             // 
@@ -155,9 +160,10 @@
             this.LabelEmail.AutoSize = true;
             this.LabelEmail.Font = new System.Drawing.Font("Roboto", 10F);
             this.LabelEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.LabelEmail.Location = new System.Drawing.Point(234, 265);
+            this.LabelEmail.Location = new System.Drawing.Point(176, 215);
+            this.LabelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelEmail.Name = "LabelEmail";
-            this.LabelEmail.Size = new System.Drawing.Size(56, 20);
+            this.LabelEmail.Size = new System.Drawing.Size(46, 17);
             this.LabelEmail.TabIndex = 14;
             this.LabelEmail.Text = "E-mail";
             // 
@@ -166,9 +172,10 @@
             this.LabelPasswort.AutoSize = true;
             this.LabelPasswort.Font = new System.Drawing.Font("Roboto", 10F);
             this.LabelPasswort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.LabelPasswort.Location = new System.Drawing.Point(234, 341);
+            this.LabelPasswort.Location = new System.Drawing.Point(176, 277);
+            this.LabelPasswort.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelPasswort.Name = "LabelPasswort";
-            this.LabelPasswort.Size = new System.Drawing.Size(82, 20);
+            this.LabelPasswort.Size = new System.Drawing.Size(68, 17);
             this.LabelPasswort.TabIndex = 15;
             this.LabelPasswort.Text = "Passwort";
             // 
@@ -177,9 +184,10 @@
             this.LabelPasswortBestaetigen.AutoSize = true;
             this.LabelPasswortBestaetigen.Font = new System.Drawing.Font("Roboto", 10F);
             this.LabelPasswortBestaetigen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.LabelPasswortBestaetigen.Location = new System.Drawing.Point(234, 419);
+            this.LabelPasswortBestaetigen.Location = new System.Drawing.Point(176, 340);
+            this.LabelPasswortBestaetigen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelPasswortBestaetigen.Name = "LabelPasswortBestaetigen";
-            this.LabelPasswortBestaetigen.Size = new System.Drawing.Size(167, 20);
+            this.LabelPasswortBestaetigen.Size = new System.Drawing.Size(137, 17);
             this.LabelPasswortBestaetigen.TabIndex = 16;
             this.LabelPasswortBestaetigen.Text = "Passwort bestätigen";
             // 
@@ -188,9 +196,10 @@
             this.LabelSicherheitsfrage.AutoSize = true;
             this.LabelSicherheitsfrage.Font = new System.Drawing.Font("Roboto", 10F);
             this.LabelSicherheitsfrage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(115)))), ((int)(((byte)(122)))));
-            this.LabelSicherheitsfrage.Location = new System.Drawing.Point(234, 483);
+            this.LabelSicherheitsfrage.Location = new System.Drawing.Point(176, 392);
+            this.LabelSicherheitsfrage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelSicherheitsfrage.Name = "LabelSicherheitsfrage";
-            this.LabelSicherheitsfrage.Size = new System.Drawing.Size(133, 20);
+            this.LabelSicherheitsfrage.Size = new System.Drawing.Size(109, 17);
             this.LabelSicherheitsfrage.TabIndex = 17;
             this.LabelSicherheitsfrage.Text = "Sicherheitsfrage";
             // 
@@ -204,9 +213,10 @@
             "Welche Firma ist deine Lieblingsfirma?",
             "Wie war der Mädchenname deiner Mutter?",
             "Was ist ihre Lieblingszahl?"});
-            this.ComboBoxFragen.Location = new System.Drawing.Point(238, 506);
+            this.ComboBoxFragen.Location = new System.Drawing.Point(178, 411);
+            this.ComboBoxFragen.Margin = new System.Windows.Forms.Padding(2);
             this.ComboBoxFragen.Name = "ComboBoxFragen";
-            this.ComboBoxFragen.Size = new System.Drawing.Size(321, 24);
+            this.ComboBoxFragen.Size = new System.Drawing.Size(242, 21);
             this.ComboBoxFragen.TabIndex = 18;
             this.ComboBoxFragen.SelectedIndexChanged += new System.EventHandler(this.ComboBoxFragen_SelectedIndexChanged);
             // 
@@ -214,9 +224,10 @@
             // 
             this.TextBoxSicherheitsfrage.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBoxSicherheitsfrage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
-            this.TextBoxSicherheitsfrage.Location = new System.Drawing.Point(238, 536);
+            this.TextBoxSicherheitsfrage.Location = new System.Drawing.Point(178, 436);
+            this.TextBoxSicherheitsfrage.Margin = new System.Windows.Forms.Padding(2);
             this.TextBoxSicherheitsfrage.Name = "TextBoxSicherheitsfrage";
-            this.TextBoxSicherheitsfrage.Size = new System.Drawing.Size(321, 22);
+            this.TextBoxSicherheitsfrage.Size = new System.Drawing.Size(242, 19);
             this.TextBoxSicherheitsfrage.TabIndex = 19;
             this.TextBoxSicherheitsfrage.MouseEnter += new System.EventHandler(this.TextBoxSicherheitsfrage_MouseEnter);
             this.TextBoxSicherheitsfrage.MouseLeave += new System.EventHandler(this.TextBoxSicherheitsfrage_MouseLeave);
@@ -226,9 +237,10 @@
             this.LabelPasswortAnforderungen.AutoSize = true;
             this.LabelPasswortAnforderungen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
             this.LabelPasswortAnforderungen.ForeColor = System.Drawing.Color.White;
-            this.LabelPasswortAnforderungen.Location = new System.Drawing.Point(565, 364);
+            this.LabelPasswortAnforderungen.Location = new System.Drawing.Point(424, 296);
+            this.LabelPasswortAnforderungen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelPasswortAnforderungen.Name = "LabelPasswortAnforderungen";
-            this.LabelPasswortAnforderungen.Size = new System.Drawing.Size(185, 64);
+            this.LabelPasswortAnforderungen.Size = new System.Drawing.Size(149, 52);
             this.LabelPasswortAnforderungen.TabIndex = 22;
             this.LabelPasswortAnforderungen.Text = " Mindestens 8 Zeichen\n Mindestens 1 Zahl\n Mindestens 1 Sonderzeichen\n Mindestens " +
     "1 Großbuchstabe";
@@ -239,9 +251,10 @@
             this.LabelPasswortStimmtnichtüberein.AutoSize = true;
             this.LabelPasswortStimmtnichtüberein.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
             this.LabelPasswortStimmtnichtüberein.ForeColor = System.Drawing.Color.White;
-            this.LabelPasswortStimmtnichtüberein.Location = new System.Drawing.Point(565, 445);
+            this.LabelPasswortStimmtnichtüberein.Location = new System.Drawing.Point(424, 362);
+            this.LabelPasswortStimmtnichtüberein.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelPasswortStimmtnichtüberein.Name = "LabelPasswortStimmtnichtüberein";
-            this.LabelPasswortStimmtnichtüberein.Size = new System.Drawing.Size(208, 16);
+            this.LabelPasswortStimmtnichtüberein.Size = new System.Drawing.Size(167, 13);
             this.LabelPasswortStimmtnichtüberein.TabIndex = 23;
             this.LabelPasswortStimmtnichtüberein.Text = "Passwörter stimmen nicht überein!";
             this.LabelPasswortStimmtnichtüberein.Visible = false;
@@ -251,9 +264,10 @@
             this.LabelEmailUngültig.AutoSize = true;
             this.LabelEmailUngültig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
             this.LabelEmailUngültig.ForeColor = System.Drawing.Color.White;
-            this.LabelEmailUngültig.Location = new System.Drawing.Point(565, 292);
+            this.LabelEmailUngültig.Location = new System.Drawing.Point(424, 237);
+            this.LabelEmailUngültig.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelEmailUngültig.Name = "LabelEmailUngültig";
-            this.LabelEmailUngültig.Size = new System.Drawing.Size(93, 16);
+            this.LabelEmailUngültig.Size = new System.Drawing.Size(75, 13);
             this.LabelEmailUngültig.TabIndex = 24;
             this.LabelEmailUngültig.Text = "Email ungültig!";
             this.LabelEmailUngültig.Visible = false;
@@ -263,9 +277,10 @@
             this.LabelBereitsVergeben.AutoSize = true;
             this.LabelBereitsVergeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
             this.LabelBereitsVergeben.ForeColor = System.Drawing.Color.White;
-            this.LabelBereitsVergeben.Location = new System.Drawing.Point(296, 268);
+            this.LabelBereitsVergeben.Location = new System.Drawing.Point(222, 218);
+            this.LabelBereitsVergeben.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelBereitsVergeben.Name = "LabelBereitsVergeben";
-            this.LabelBereitsVergeben.Size = new System.Drawing.Size(145, 16);
+            this.LabelBereitsVergeben.Size = new System.Drawing.Size(115, 13);
             this.LabelBereitsVergeben.TabIndex = 25;
             this.LabelBereitsVergeben.Text = "E-mail schon vergeben";
             this.LabelBereitsVergeben.Visible = false;
@@ -275,32 +290,24 @@
             this.LabelBenutzerbereitsvergeben.AutoSize = true;
             this.LabelBenutzerbereitsvergeben.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(26)))), ((int)(((byte)(55)))));
             this.LabelBenutzerbereitsvergeben.ForeColor = System.Drawing.Color.White;
-            this.LabelBenutzerbereitsvergeben.Location = new System.Drawing.Point(358, 189);
+            this.LabelBenutzerbereitsvergeben.Location = new System.Drawing.Point(268, 154);
+            this.LabelBenutzerbereitsvergeben.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LabelBenutzerbereitsvergeben.Name = "LabelBenutzerbereitsvergeben";
-            this.LabelBenutzerbereitsvergeben.Size = new System.Drawing.Size(198, 16);
+            this.LabelBenutzerbereitsvergeben.Size = new System.Drawing.Size(157, 13);
             this.LabelBenutzerbereitsvergeben.TabIndex = 26;
             this.LabelBenutzerbereitsvergeben.Text = "Benutzername bereits vergeben";
             this.LabelBenutzerbereitsvergeben.Visible = false;
-            // 
-            // EDLogo
-            // 
-            this.EDLogo.Image = ((System.Drawing.Image)(resources.GetObject("EDLogo.Image")));
-            this.EDLogo.Location = new System.Drawing.Point(275, 12);
-            this.EDLogo.Name = "EDLogo";
-            this.EDLogo.Size = new System.Drawing.Size(247, 83);
-            this.EDLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.EDLogo.TabIndex = 28;
-            this.EDLogo.TabStop = false;
             // 
             // ButtonZurueck
             // 
             this.ButtonZurueck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(225)))), ((int)(((byte)(229)))));
             this.ButtonZurueck.Font = new System.Drawing.Font("Roboto", 9F);
             this.ButtonZurueck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(73)))), ((int)(((byte)(77)))));
-            this.ButtonZurueck.Location = new System.Drawing.Point(657, 668);
+            this.ButtonZurueck.Location = new System.Drawing.Point(493, 543);
+            this.ButtonZurueck.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonZurueck.Name = "ButtonZurueck";
             this.ButtonZurueck.Opacity = 1F;
-            this.ButtonZurueck.Size = new System.Drawing.Size(118, 32);
+            this.ButtonZurueck.Size = new System.Drawing.Size(88, 26);
             this.ButtonZurueck.TabIndex = 29;
             this.ButtonZurueck.Text = "Zurück";
             this.ButtonZurueck.UseVisualStyleBackColor = false;
@@ -314,10 +321,11 @@
             this.OpacityRegistrierenButton.Enabled = false;
             this.OpacityRegistrierenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OpacityRegistrierenButton.ForeColor = System.Drawing.Color.White;
-            this.OpacityRegistrierenButton.Location = new System.Drawing.Point(336, 603);
+            this.OpacityRegistrierenButton.Location = new System.Drawing.Point(252, 490);
+            this.OpacityRegistrierenButton.Margin = new System.Windows.Forms.Padding(2);
             this.OpacityRegistrierenButton.Name = "OpacityRegistrierenButton";
             this.OpacityRegistrierenButton.Opacity = 0.35F;
-            this.OpacityRegistrierenButton.Size = new System.Drawing.Size(111, 36);
+            this.OpacityRegistrierenButton.Size = new System.Drawing.Size(83, 29);
             this.OpacityRegistrierenButton.TabIndex = 27;
             this.OpacityRegistrierenButton.Text = "Registrieren";
             this.OpacityRegistrierenButton.UseVisualStyleBackColor = false;
@@ -327,12 +335,11 @@
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(787, 712);
+            this.ClientSize = new System.Drawing.Size(590, 578);
             this.Controls.Add(this.ButtonZurueck);
-            this.Controls.Add(this.EDLogo);
             this.Controls.Add(this.OpacityRegistrierenButton);
             this.Controls.Add(this.LabelBenutzerbereitsvergeben);
             this.Controls.Add(this.LabelBereitsVergeben);
@@ -354,9 +361,9 @@
             this.Controls.Add(this.TextBoxEmail);
             this.Controls.Add(this.TextBoxPasswort);
             this.ForeColor = System.Drawing.SystemColors.Control;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Register";
-            this.Text = "Register";
-            ((System.ComponentModel.ISupportInitialize)(this.EDLogo)).EndInit();
+            this.Text = "Registrieren";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +390,6 @@
         private System.Windows.Forms.Label LabelBereitsVergeben;
         private System.Windows.Forms.Label LabelBenutzerbereitsvergeben;
         private TransparentButton OpacityRegistrierenButton;
-        private System.Windows.Forms.PictureBox EDLogo;
         private TransparentButton ButtonZurueck;
     }
 }

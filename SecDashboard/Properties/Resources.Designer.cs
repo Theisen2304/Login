@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ED_Login.Properties
+namespace SecDashboard.Properties
 {
 
 

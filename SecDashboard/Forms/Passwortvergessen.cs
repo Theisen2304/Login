@@ -10,8 +10,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SecDashboard;
 
-namespace ED_Login.Forms
+namespace SecDashboard.Forms
 {
     public partial class Passwortvergessen : Form
     {
@@ -23,11 +24,9 @@ namespace ED_Login.Forms
         private string HashPassword(string password)
         {
             using (SHA256 sha256Hash = SHA256.Create())
-            {
-                // Berechne den Hash - dies gibt Byte-Daten zurück.
+            {                
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                // Konvertiere die Byte-Daten in eine Zeichenkette (hexadezimal)
+              
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++)
                 {
@@ -113,9 +112,10 @@ namespace ED_Login.Forms
         private void ButtonZurueck_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
             form1.StartPosition = FormStartPosition.CenterScreen;
-            form1.Show();
+            form1.ShowDialog();
+            this.Close();
         }
         public void AccountErkannt()
         {
@@ -124,8 +124,7 @@ namespace ED_Login.Forms
                 string Zeile;
                 while ((Zeile = passreader.ReadLine()) != null)
                 {
-                    string[] Data = Zeile.Split(';');
-                    // Data.Length einfügen
+                    string[] Data = Zeile.Split(';');                 
                     if (Data.Length <= 3)
                     {
                         continue;
@@ -383,8 +382,8 @@ namespace ED_Login.Forms
                     }
                 }
             }
-            this.Hide();
-            Form1 form1 = new Form1();
+            this.Close();
+            Login form1 = new Login();
             form1.Show();
             form1.StartPosition = FormStartPosition.CenterScreen;
         }

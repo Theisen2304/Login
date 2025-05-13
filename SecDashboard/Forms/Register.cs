@@ -14,8 +14,10 @@ using Svg.Skia;
 using SkiaSharp;
 using System.Xml.Linq;
 using static System.Net.WebRequestMethods;
+//using ExCSS;
+using SecDashboard;
 
-namespace ED_Login
+namespace SecDashboard
 {
     public partial class Register : Form
     {
@@ -29,10 +31,8 @@ namespace ED_Login
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // Berechne den Hash - dies gibt Byte-Daten zurück.
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
 
-                // Konvertiere die Byte-Daten in eine Zeichenkette (hexadezimal)
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++)
                 {
@@ -70,7 +70,7 @@ namespace ED_Login
             
             {
                 int nextId = GetNextId();
-                bool istAdmin = false; // Beispielsweise
+                bool istAdmin = false;
                 bool istAktiv = false;
                 bool zuletztangemeldet = false;
 
@@ -88,7 +88,7 @@ namespace ED_Login
                 sw.WriteLine(neuezeile);
                 sw.Close();
                 this.Hide();
-                Form1 form = new Form1();
+                Login form = new Login();
                 form.Show();
             }
         }
@@ -255,7 +255,7 @@ namespace ED_Login
         }
         private void TextBoxPasswort_TextChanged(object sender, EventArgs e)
         {
-            if (!Passwortüberprüfen()) // vereinfachte Bedingung
+            if (!Passwortüberprüfen())
             {
                 LabelPasswortAnforderungen.Visible = true;
             }
@@ -442,9 +442,10 @@ namespace ED_Login
         private void ButtonZurueck_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
             form1.StartPosition = FormStartPosition.CenterScreen;
-            form1.Show();
+            form1.ShowDialog();
+            this.Close();
         }
 
         private void ButtonZurueck_MouseEnter(object sender, EventArgs e)
@@ -457,10 +458,10 @@ namespace ED_Login
             ButtonZurueck.BackColor = ColorTranslator.FromHtml("#DAE1E5");
         }
 
+        private void EDLogo_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
         //private void ButtonRegistrieren_EnabledChanged(object sender, EventArgs e)
         //{
         //    if (LabelBenutzerbereitsvergeben.Visible == false || LabelBereitsVergeben.Visible == false || LabelEmailUngültig.Visible == false || LabelPasswortAnforderungen.Visible == false || LabelPasswortStimmtnichtüberein.Visible == false)

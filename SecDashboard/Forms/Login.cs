@@ -14,18 +14,19 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
-using ED_Login.Forms;
+using SecDashboard.Forms;
+using SecDashboard;
 
-namespace ED_Login
+namespace SecDashboard
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         public bool IstEMailFokussiert;
         public bool IstPWFokussiert;
 
         private const FormStartPosition centerScreen = FormStartPosition.CenterScreen;
 
-        public Form1()
+        public Login()
         {
             InitializeComponent();
             StartPosition = centerScreen;
@@ -98,14 +99,16 @@ namespace ED_Login
             this.Hide();
             Passwortvergessen passwortvergessen = new Passwortvergessen();
             passwortvergessen.StartPosition = centerScreen;
-            passwortvergessen.Show();
+            passwortvergessen.ShowDialog();
+            this.Close();
         }
         private void RedirectRegistrieren_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
              this.Hide();
              Register register = new Register();
              register.StartPosition = centerScreen;
-             register.Show();
+             register.ShowDialog();
+             this.Close();
         }
         //private void ButtonLogin_Click(object sender, EventArgs e)
         //{
@@ -175,10 +178,8 @@ namespace ED_Login
         {
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // Berechne den Hash - dies gibt Byte-Daten zurück.
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
 
-                // Konvertiere die Byte-Daten in eine Zeichenkette (hexadezimal)
                 StringBuilder builder = new StringBuilder();
                 for (int i = 0; i < bytes.Length; i++)
                 {
@@ -247,8 +248,7 @@ namespace ED_Login
 
                 while ((Zeile = passreader.ReadLine()) != null)
                 {
-                    string[] Data = Zeile.Split(';');
-                    // Data.Length einfügen
+                    string[] Data = Zeile.Split(';');                   
 
                     if (Data.Length < 3)
                     {
@@ -285,10 +285,15 @@ namespace ED_Login
 
                     if (LabelLoginErfolgreich.Visible == true)
                     {
-                        this.Hide();
-                        Angemeldet angemeldet = new Angemeldet(Data[2], Data[9]);
-                        angemeldet.Show();
-                        angemeldet.StartPosition = centerScreen;
+                        string benutzername = Data[2];
+                        string status = Data[8];
+                        DatenBankManager.AddLoginEntry(Data[2], Data[8]);
+                        BackupManager.BackupAll();
+                            this.Hide();
+                            Angemeldet angemeldet = new Angemeldet(benutzername, status);
+                            angemeldet.ShowDialog();
+                            angemeldet.StartPosition = centerScreen;
+                            this.Close();
                     }
 
                 }
